@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 // Logo URL - replace with your actual logo
-const logoUrl = 'https://i.postimg.cc/Jz99nZSM/IMG-6967.jpg';
+const logoUrl = 'https://ibb.co/r2Zm1nK5';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
