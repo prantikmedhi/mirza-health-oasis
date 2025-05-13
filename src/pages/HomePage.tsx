@@ -114,10 +114,11 @@ const HomePage = () => {
       <section className="py-20 bg-skyblue-light">
         <div className="container mx-auto px-4">
           <SectionTitle 
-            title="Our Services" 
-            subtitle="We offer a wide range of medical services to meet your healthcare needs" 
-            center
-          />
+  title="Our Services" 
+  subtitle="We offer a wide range of medical services to meet your healthcare needs" 
+  center
+  titleClassName="!text-[#1E2C5E]"
+/>
           
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
             <ServiceCard 
