@@ -22,9 +22,9 @@ const HomePage = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl text-white">
             <ScrollReveal>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-dm-serif font-bold mb-4">
-                Your Health Is Our Priority
-              </h1>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-dm-serif font-bold mb-4 text-white">
+  Your Health Is Our Priority
+</h1>
             </ScrollReveal>
             <ScrollReveal delay={200}>
               <p className="text-xl mb-8 text-gray-200">
