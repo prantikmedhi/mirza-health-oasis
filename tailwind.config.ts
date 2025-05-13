@@ -63,21 +63,25 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				royal: {
-					DEFAULT: '#1E3A8A',
-					light: '#2a4fb3',
-					dark: '#15297c'
+				// New color scheme
+				teal: {
+					DEFAULT: '#197C6E',
+					light: '#009688'
 				},
-				gold: {
-					DEFAULT: '#FFD700',
-					light: '#ffe566',
-					dark: '#ccac00'
+				skyblue: {
+					DEFAULT: '#03A9F4',
+					light: '#C8E6F6',
+					medium: '#4A9DE0'
 				},
-				soft: {
-					grey: '#F5F5F5'
-				}
+				charcoal: '#212121',
+				coolgray: '#B0BEC5',
+				leaf: '#66BB6A',
+				softwhite: '#FAFAFA'
 			},
 			fontFamily: {
+				'dm-serif': ['"DM Serif Text"', 'serif'],
+				'abril': ['"Abril Fatface"', 'cursive'],
+				'poppins': ['Poppins', 'sans-serif'],
 				'playfair': ['Playfair Display', 'serif'],
 				'lato': ['Lato', 'sans-serif']
 			},
@@ -112,8 +116,8 @@ export default {
 					'50%': { transform: 'translateY(-10px)' }
 				},
 				'glow': {
-					'0%, 100%': { boxShadow: '0 0 5px 2px rgba(255, 215, 0, 0.3)' },
-					'50%': { boxShadow: '0 0 15px 5px rgba(255, 215, 0, 0.6)' }
+					'0%, 100%': { boxShadow: '0 0 5px 2px rgba(25, 124, 110, 0.3)' },
+					'50%': { boxShadow: '0 0 15px 5px rgba(25, 124, 110, 0.6)' }
 				}
 			},
 			animation: {

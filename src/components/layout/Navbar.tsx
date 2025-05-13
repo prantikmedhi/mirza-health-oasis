@@ -2,6 +2,9 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
+// Logo URL - replace with your actual logo
+const logoUrl = 'https://placehold.co/200x60/197C6E/FFFFFF/png?text=MIRZA+HOSPITAL';
+
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -18,13 +21,12 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white shadow-md py-2' : 'bg-transparent py-4'
+        isScrolled ? 'bg-white/95 backdrop-blur-md shadow-md py-2' : 'bg-transparent py-4'
       }`}
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
         <Link to="/" className="flex items-center">
-          <span className="text-royal font-playfair text-2xl font-bold">Mirza</span>
-          <span className="text-gold font-playfair text-2xl font-bold ml-1">Hospital</span>
+          <img src={logoUrl} alt="Mirza Hospital" className="h-10 md:h-12" />
         </Link>
 
         {/* Desktop Menu */}
@@ -37,7 +39,7 @@ const Navbar = () => {
           <NavLink to="/contact">Contact</NavLink>
           <Link 
             to="/appointment" 
-            className="bg-royal text-white hover:bg-royal-light px-4 py-2 rounded transition-colors duration-300"
+            className="bg-teal text-white hover:bg-teal-light px-4 py-2 rounded transition-colors duration-300"
           >
             Appointment
           </Link>
@@ -46,7 +48,7 @@ const Navbar = () => {
         {/* Mobile Menu Button */}
         <button 
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="lg:hidden text-royal focus:outline-none"
+          className="lg:hidden text-teal focus:outline-none"
         >
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
             {isMobileMenuOpen ? (
@@ -60,7 +62,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden bg-white shadow-md absolute top-full left-0 right-0 animate-fade-in">
+        <div className="lg:hidden bg-white/95 backdrop-blur-md shadow-md absolute top-full left-0 right-0 animate-fade-in">
           <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
             <MobileNavLink to="/" onClick={() => setIsMobileMenuOpen(false)}>Home</MobileNavLink>
             <MobileNavLink to="/about" onClick={() => setIsMobileMenuOpen(false)}>About</MobileNavLink>
@@ -70,7 +72,7 @@ const Navbar = () => {
             <MobileNavLink to="/contact" onClick={() => setIsMobileMenuOpen(false)}>Contact</MobileNavLink>
             <Link 
               to="/appointment" 
-              className="bg-royal text-white hover:bg-royal-light px-4 py-2 rounded text-center transition-colors duration-300"
+              className="bg-teal text-white hover:bg-teal-light px-4 py-2 rounded text-center transition-colors duration-300"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Appointment
@@ -86,7 +88,7 @@ const NavLink = ({ to, children }: { to: string; children: React.ReactNode }) =>
   return (
     <Link 
       to={to} 
-      className="text-royal hover:text-gold transition-colors duration-300 font-medium relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gold hover:after:w-full after:transition-all after:duration-300"
+      className="text-charcoal hover:text-teal transition-colors duration-300 font-medium relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-teal hover:after:w-full after:transition-all after:duration-300"
     >
       {children}
     </Link>
@@ -97,7 +99,7 @@ const MobileNavLink = ({ to, children, onClick }: { to: string; children: React.
   return (
     <Link 
       to={to} 
-      className="text-royal hover:text-gold transition-colors duration-300 font-medium py-2 border-b border-gray-100"
+      className="text-charcoal hover:text-teal transition-colors duration-300 font-medium py-2 border-b border-coolgray/30"
       onClick={onClick}
     >
       {children}
