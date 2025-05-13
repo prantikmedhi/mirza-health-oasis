@@ -140,4 +140,35 @@
   .luxury-button {
     @apply bg-teal text-white py-2 px-6 rounded-md shadow-md hover:shadow-lg hover:bg-teal-light transition-all duration-300;
   }
+
+  .luxury-gradient {
+    background: linear-gradient(135deg, #197C6E 0%, #009688 100%);
+  }
+  
+  .luxury-highlight {
+    @apply border-l-4 border-teal pl-4 py-1;
+  }
+  
+  .premium-card {
+    @apply bg-white rounded-lg overflow-hidden border border-coolgray/30;
+    box-shadow: 0 10px 25px rgba(74, 157, 224, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .premium-card:hover {
+    box-shadow: 0 15px 35px rgba(25, 124, 110, 0.15);
+    transform: translateY(-5px);
+  }
+  
+  .premium-button {
+    @apply bg-teal text-white font-medium rounded-md px-6 py-3;
+    box-shadow: 0 4px 10px rgba(25, 124, 110, 0.2);
+    transition: all 0.3s ease;
+  }
+  
+  .premium-button:hover {
+    @apply bg-teal-light;
+    box-shadow: 0 6px 15px rgba(25, 124, 110, 0.3);
+    transform: translateY(-2px);
+  }
 }

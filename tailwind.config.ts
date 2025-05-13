@@ -63,28 +63,20 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Updated color scheme
+				// Updated exact colors as specified
 				teal: {
-					DEFAULT: '#197C6E',
-					light: '#009688'
+					DEFAULT: '#197C6E', // Primary teal
+					light: '#009688'    // Secondary teal
 				},
 				skyblue: {
-					DEFAULT: '#03A9F4',
-					light: '#C8E6F6',
-					medium: '#4A9DE0'
+					DEFAULT: '#03A9F4',  // Primary sky blue
+					light: '#C8E6F6',    // Light blue background
+					medium: '#4A9DE0'    // Medium blue
 				},
-				charcoal: '#212121',
-				coolgray: '#B0BEC5',
-				leaf: '#66BB6A',
-				softwhite: '#FAFAFA',
-				gold: {
-					DEFAULT: '#FFD700',
-					light: '#FFEB3B'
-				},
-				royal: {
-					DEFAULT: '#1E3A8A',
-					light: '#2563EB'
-				}
+				charcoal: '#212121',     // For text
+				coolgray: '#B0BEC5',     // For subtle elements
+				leaf: '#66BB6A',         // Accent color
+				softwhite: '#FAFAFA',    // Background
 			},
 			fontFamily: {
 				'dm-serif': ['"DM Serif Text"', 'serif'],

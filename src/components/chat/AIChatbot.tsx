@@ -46,9 +46,9 @@ const AIChatbot = () => {
 
   return (
     <>
-      {/* Chatbot toggle button - updated with luxurious styling */}
+      {/* Chatbot toggle button - luxury styling with proper colors */}
       <button 
-        className={`fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-teal text-white shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110 ${isOpen ? 'animate-glow' : 'hover:animate-glow'}`}
+        className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-teal text-white shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110"
         onClick={() => setIsOpen(!isOpen)}
         aria-label="Chat with our AI Assistant"
         style={{ boxShadow: '0 4px 20px rgba(25, 124, 110, 0.5)' }}
@@ -64,7 +64,7 @@ const AIChatbot = () => {
         )}
       </button>
       
-      {/* Tooltip for chatbot - improved visibility */}
+      {/* Tooltip for chatbot - improved visibility with theme colors */}
       {!isOpen && (
         <div className="fixed bottom-[88px] right-6 bg-white text-teal px-4 py-2 rounded shadow-lg z-50 animate-fade-in">
           <div className="absolute -bottom-2 right-6 w-3 h-3 bg-white transform rotate-45"></div>
@@ -72,12 +72,14 @@ const AIChatbot = () => {
         </div>
       )}
       
-      {/* Chatbot modal - enhanced with luxurious styling */}
+      {/* Chatbot modal - enhanced with luxury theme styling */}
       {isOpen && (
-        <div className="fixed bottom-24 right-6 w-80 md:w-96 h-96 bg-white rounded-lg shadow-xl z-50 flex flex-col animate-scale-in overflow-hidden" 
-             style={{ boxShadow: '0 10px 25px rgba(25, 124, 110, 0.2)' }}>
-          {/* Chat header */}
-          <div className="bg-teal text-white p-4">
+        <div 
+          className="fixed bottom-24 right-6 w-80 md:w-96 h-96 bg-white rounded-lg shadow-xl z-50 flex flex-col animate-scale-in overflow-hidden" 
+          style={{ boxShadow: '0 10px 25px rgba(25, 124, 110, 0.2)' }}
+        >
+          {/* Chat header - using luxury gradient */}
+          <div className="luxury-gradient text-white p-4">
             <h3 className="font-dm-serif font-medium">Mirza Hospital AI Assistant</h3>
             <p className="text-xs opacity-75">Ask me anything about our hospital</p>
           </div>
@@ -93,7 +95,7 @@ const AIChatbot = () => {
                   className={`max-w-[80%] p-3 rounded-lg ${
                     msg.sender === 'user' 
                       ? 'bg-teal text-white rounded-tr-none' 
-                      : 'bg-gray-100 text-charcoal rounded-tl-none'
+                      : 'bg-skyblue-light text-charcoal rounded-tl-none'
                   }`}
                 >
                   {msg.text}
@@ -103,7 +105,7 @@ const AIChatbot = () => {
             
             {isTyping && (
               <div className="flex justify-start">
-                <div className="bg-gray-100 text-gray-800 p-3 rounded-lg rounded-tl-none">
+                <div className="bg-skyblue-light text-gray-800 p-3 rounded-lg rounded-tl-none">
                   <div className="flex space-x-1">
                     <div className="w-2 h-2 rounded-full bg-teal animate-pulse"></div>
                     <div className="w-2 h-2 rounded-full bg-teal animate-pulse delay-100"></div>
@@ -122,7 +124,7 @@ const AIChatbot = () => {
                 type="text" 
                 value={input} 
                 onChange={(e) => setInput(e.target.value)}
-                className="flex-1 border border-gray-300 rounded-full px-4 py-2 focus:outline-none focus:ring-2 focus:ring-teal"
+                className="flex-1 border border-coolgray rounded-full px-4 py-2 focus:outline-none focus:ring-2 focus:ring-teal"
                 placeholder="Type your message..."
               />
               <button 
