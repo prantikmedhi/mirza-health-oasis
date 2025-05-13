@@ -70,7 +70,7 @@ const HomePage = () => {
             </ScrollReveal>
             <div>
               <SectionTitle 
-                title="About Mirza Hospital" 
+                title="About Mirza Multispeciality Hospital" 
                 subtitle="Quality Healthcare for Everyone" 
               />
               <ScrollReveal delay={200}>
