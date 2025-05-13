@@ -103,9 +103,9 @@
     @apply bg-skyblue text-white hover:bg-skyblue-medium transition-colors duration-300 py-2 px-6 rounded-md font-medium shadow-md;
   }
 
-  .section-title {
-    @apply text-3xl md:text-4xl lg:text-5xl font-dm-serif font-bold text-teal mb-6 relative;
-  }
+.section-title {
+  @apply text-3xl md:text-4xl lg:text-5xl font-dm-serif font-bold text-customBlue mb-6 relative;
+}
 
   .section-title::after {
     @apply content-[''] absolute bottom-0 left-0 w-16 h-1 bg-leaf;
