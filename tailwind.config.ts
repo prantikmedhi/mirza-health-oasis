@@ -131,5 +131,15 @@ export default {
 			}
 		}
 	},
+	// tailwind.config.js
+module.exports = {
+  theme: {
+    extend: {
+      colors: {
+        customBlue: '#1E2C5E',
+      },
+    },
+  },
+}, 
 	plugins: [require("tailwindcss-animate")],
 } satisfies Config;
