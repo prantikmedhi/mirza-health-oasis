@@ -63,7 +63,7 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// New color scheme
+				// Updated color scheme
 				teal: {
 					DEFAULT: '#197C6E',
 					light: '#009688'
@@ -76,7 +76,15 @@ export default {
 				charcoal: '#212121',
 				coolgray: '#B0BEC5',
 				leaf: '#66BB6A',
-				softwhite: '#FAFAFA'
+				softwhite: '#FAFAFA',
+				gold: {
+					DEFAULT: '#FFD700',
+					light: '#FFEB3B'
+				},
+				royal: {
+					DEFAULT: '#1E3A8A',
+					light: '#2563EB'
+				}
 			},
 			fontFamily: {
 				'dm-serif': ['"DM Serif Text"', 'serif'],

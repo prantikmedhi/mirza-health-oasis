@@ -21,17 +21,17 @@ const ServicesPage = () => {
 
   return (
     <div className="pt-20">
-      {/* Hero Section */}
-      <section className="bg-royal py-16 md:py-24">
+      {/* Hero Section - improved contrast */}
+      <section className="bg-teal py-16 md:py-24">
         <div className="container mx-auto px-4">
-          <div className="text-center text-white">
+          <div className="text-center">
             <ScrollReveal>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-playfair font-bold mb-4">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-dm-serif font-bold mb-4 text-white">
                 Our Services
               </h1>
             </ScrollReveal>
             <ScrollReveal delay={200}>
-              <p className="text-xl max-w-3xl mx-auto">
+              <p className="text-xl max-w-3xl mx-auto text-white/90">
                 Comprehensive healthcare services delivered with excellence and compassion
               </p>
             </ScrollReveal>
@@ -135,16 +135,16 @@ const ServicesPage = () => {
         ]}
       />
 
-      {/* CTA */}
-      <section className="py-16 bg-royal text-white">
+      {/* CTA - improved with luxury styling */}
+      <section className="py-16 bg-teal text-white">
         <div className="container mx-auto px-4 text-center">
           <ScrollReveal>
-            <h2 className="text-3xl md:text-4xl font-playfair font-bold mb-4">
+            <h2 className="text-3xl md:text-4xl font-dm-serif font-bold mb-4 text-white">
               Need Our Medical Services?
             </h2>
           </ScrollReveal>
           <ScrollReveal delay={200}>
-            <p className="text-xl mb-8 max-w-2xl mx-auto">
+            <p className="text-xl mb-8 max-w-2xl mx-auto text-white/90">
               Book an appointment with our specialists or contact us for more information about our services.
             </p>
           </ScrollReveal>
@@ -152,13 +152,13 @@ const ServicesPage = () => {
             <div className="flex flex-wrap justify-center gap-4">
               <Link 
                 to="/appointment" 
-                className="bg-gold text-royal hover:bg-gold-light transition-colors duration-300 py-3 px-8 rounded-md font-medium text-lg"
+                className="bg-white text-teal hover:bg-gray-100 transition-colors duration-300 py-3 px-8 rounded-md font-medium text-lg luxury-shadow"
               >
                 Book Appointment
               </Link>
               <Link 
                 to="/contact" 
-                className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-royal transition-colors duration-300 py-3 px-8 rounded-md font-medium text-lg"
+                className="bg-transparent border-2 border-white text-white hover:bg-white/10 transition-colors duration-300 py-3 px-8 rounded-md font-medium text-lg"
               >
                 Contact Us
               </Link>
@@ -188,7 +188,7 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({
   features 
 }) => {
   return (
-    <section className={`py-16 md:py-24 ${reverse ? 'bg-soft-grey' : 'bg-white'}`}>
+    <section className={`py-16 md:py-24 ${reverse ? 'bg-gray-50' : 'bg-white'}`}>
       <div className="container mx-auto px-4">
         <div className={`grid md:grid-cols-2 gap-12 items-center ${reverse ? 'md:flex-row-reverse' : ''}`}>
           <ScrollReveal>
@@ -196,7 +196,7 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({
               <img 
                 src={imageSrc} 
                 alt={imageAlt} 
-                className="w-full h-auto rounded-lg shadow-lg object-cover"
+                className="w-full h-auto rounded-lg shadow-lg object-cover luxury-shadow"
                 style={{ height: '400px' }}
               />
             </div>
@@ -204,7 +204,7 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({
           <div>
             <SectionTitle title={title} />
             <ScrollReveal delay={200}>
-              <p className="text-gray-600 mb-6">
+              <p className="text-gray-700 mb-6">
                 {description}
               </p>
             </ScrollReveal>
@@ -212,10 +212,10 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({
               <ul className="space-y-3 mb-8">
                 {features.map((feature, index) => (
                   <li key={index} className="flex items-start">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gold mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-teal mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
-                    <span>{feature}</span>
+                    <span className="text-gray-800">{feature}</span>
                   </li>
                 ))}
               </ul>

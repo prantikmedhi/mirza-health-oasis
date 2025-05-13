@@ -7,7 +7,7 @@
 
 @layer base {
   :root {
-    --background: 0 0% 98%;
+    --background: 180 43% 97%;
     --foreground: 215 28% 17%;
 
     --card: 0 0% 100%;
@@ -79,7 +79,7 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-dm-serif font-semibold;
+    @apply font-dm-serif font-semibold text-teal;
   }
 
   .reveal {
@@ -96,11 +96,11 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-teal text-white hover:bg-teal-light transition-colors duration-300 py-2 px-6 rounded-md font-medium;
+    @apply bg-teal text-white hover:bg-teal-light transition-colors duration-300 py-2 px-6 rounded-md font-medium shadow-md;
   }
 
   .btn-secondary {
-    @apply bg-skyblue text-white hover:bg-skyblue-medium transition-colors duration-300 py-2 px-6 rounded-md font-medium;
+    @apply bg-skyblue text-white hover:bg-skyblue-medium transition-colors duration-300 py-2 px-6 rounded-md font-medium shadow-md;
   }
 
   .section-title {
@@ -116,6 +116,28 @@
   }
 
   .glass-effect {
-    @apply backdrop-blur-md bg-white/80 shadow-lg;
+    @apply backdrop-blur-md bg-white/90 shadow-md border border-white/50;
+  }
+  
+  /* Improved contrast for better readability */
+  .text-on-dark {
+    @apply text-white drop-shadow-md;
+  }
+  
+  .text-on-light {
+    @apply text-charcoal;
+  }
+  
+  /* Luxury effects */
+  .luxury-card {
+    @apply bg-white shadow-md border border-coolgray/20 rounded-lg overflow-hidden hover:shadow-xl transition-all duration-300;
+  }
+  
+  .luxury-shadow {
+    box-shadow: 0 10px 30px rgba(25, 124, 110, 0.15);
+  }
+  
+  .luxury-button {
+    @apply bg-teal text-white py-2 px-6 rounded-md shadow-md hover:shadow-lg hover:bg-teal-light transition-all duration-300;
   }
 }

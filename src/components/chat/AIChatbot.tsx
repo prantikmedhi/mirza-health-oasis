@@ -46,11 +46,12 @@ const AIChatbot = () => {
 
   return (
     <>
-      {/* Chatbot toggle button */}
+      {/* Chatbot toggle button - updated with luxurious styling */}
       <button 
-        className={`fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-gold text-royal shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110 animate-float ${isOpen ? 'animate-glow' : 'hover:animate-glow'}`}
+        className={`fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-teal text-white shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110 ${isOpen ? 'animate-glow' : 'hover:animate-glow'}`}
         onClick={() => setIsOpen(!isOpen)}
         aria-label="Chat with our AI Assistant"
+        style={{ boxShadow: '0 4px 20px rgba(25, 124, 110, 0.5)' }}
       >
         {isOpen ? (
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
@@ -63,20 +64,21 @@ const AIChatbot = () => {
         )}
       </button>
       
-      {/* Tooltip for chatbot */}
+      {/* Tooltip for chatbot - improved visibility */}
       {!isOpen && (
-        <div className="fixed bottom-[88px] right-6 bg-white text-royal px-4 py-2 rounded shadow-lg z-50 animate-fade-in">
+        <div className="fixed bottom-[88px] right-6 bg-white text-teal px-4 py-2 rounded shadow-lg z-50 animate-fade-in">
           <div className="absolute -bottom-2 right-6 w-3 h-3 bg-white transform rotate-45"></div>
           <p className="text-sm font-medium">Ask our AI Assistant</p>
         </div>
       )}
       
-      {/* Chatbot modal */}
+      {/* Chatbot modal - enhanced with luxurious styling */}
       {isOpen && (
-        <div className="fixed bottom-24 right-6 w-80 md:w-96 h-96 bg-white rounded-lg shadow-xl z-50 flex flex-col animate-scale-in overflow-hidden">
+        <div className="fixed bottom-24 right-6 w-80 md:w-96 h-96 bg-white rounded-lg shadow-xl z-50 flex flex-col animate-scale-in overflow-hidden" 
+             style={{ boxShadow: '0 10px 25px rgba(25, 124, 110, 0.2)' }}>
           {/* Chat header */}
-          <div className="bg-royal text-white p-4">
-            <h3 className="font-playfair font-medium">Mirza Hospital AI Assistant</h3>
+          <div className="bg-teal text-white p-4">
+            <h3 className="font-dm-serif font-medium">Mirza Hospital AI Assistant</h3>
             <p className="text-xs opacity-75">Ask me anything about our hospital</p>
           </div>
           
@@ -90,8 +92,8 @@ const AIChatbot = () => {
                 <div 
                   className={`max-w-[80%] p-3 rounded-lg ${
                     msg.sender === 'user' 
-                      ? 'bg-royal text-white rounded-tr-none' 
-                      : 'bg-gray-100 text-gray-800 rounded-tl-none'
+                      ? 'bg-teal text-white rounded-tr-none' 
+                      : 'bg-gray-100 text-charcoal rounded-tl-none'
                   }`}
                 >
                   {msg.text}
@@ -103,9 +105,9 @@ const AIChatbot = () => {
               <div className="flex justify-start">
                 <div className="bg-gray-100 text-gray-800 p-3 rounded-lg rounded-tl-none">
                   <div className="flex space-x-1">
-                    <div className="w-2 h-2 rounded-full bg-royal animate-pulse"></div>
-                    <div className="w-2 h-2 rounded-full bg-royal animate-pulse delay-100"></div>
-                    <div className="w-2 h-2 rounded-full bg-royal animate-pulse delay-200"></div>
+                    <div className="w-2 h-2 rounded-full bg-teal animate-pulse"></div>
+                    <div className="w-2 h-2 rounded-full bg-teal animate-pulse delay-100"></div>
+                    <div className="w-2 h-2 rounded-full bg-teal animate-pulse delay-200"></div>
                   </div>
                 </div>
               </div>
@@ -120,12 +122,12 @@ const AIChatbot = () => {
                 type="text" 
                 value={input} 
                 onChange={(e) => setInput(e.target.value)}
-                className="flex-1 border border-gray-300 rounded-full px-4 py-2 focus:outline-none focus:ring-2 focus:ring-royal"
+                className="flex-1 border border-gray-300 rounded-full px-4 py-2 focus:outline-none focus:ring-2 focus:ring-teal"
                 placeholder="Type your message..."
               />
               <button 
                 type="submit"
-                className="bg-royal text-white rounded-full w-10 h-10 flex items-center justify-center hover:bg-royal-light transition-colors"
+                className="bg-teal text-white rounded-full w-10 h-10 flex items-center justify-center hover:bg-teal-light transition-colors"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
