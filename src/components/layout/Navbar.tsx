@@ -33,10 +33,10 @@ const Navbar = () => {
           <img src={logoUrl} alt="Mirza Hospital Logo" className="h-12 md:h-14 object-contain" />
           <div className="flex flex-col">
             <span className="text-lg md:text-xl font-bold leading-tight text-royal">
-              Mirza Multispeciality
+              Mirza 
             </span>
             <span className="text-md md:text-lg font-semibold text-royal">
-              Hospital
+              Multispeciality Hospital
             </span>
           </div>
         </Link>
