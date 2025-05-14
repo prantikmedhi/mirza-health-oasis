@@ -116,7 +116,7 @@ const AIChatbot = () => {
         <div className="fixed bottom-24 right-6 w-80 md:w-96 h-[480px] bg-white rounded-xl shadow-xl flex flex-col overflow-hidden z-50">
           {/* Header */}
           <div className="bg-teal text-white p-4">
-            <h3 className="font-semibold text-base">Mirza Multispeciality Hospital AI Chatbot</h3>
+            <h3 className="font-semibold text-base text-white">Mirza Multispeciality Hospital AI Chatbot</h3>  
             <p className="text-xs opacity-80">Ask me anything about our hospital</p>
           </div>
 
