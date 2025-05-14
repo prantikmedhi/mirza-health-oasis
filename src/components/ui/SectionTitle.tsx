@@ -8,6 +8,7 @@ interface SectionTitleProps {
   center?: boolean;
   light?: boolean;
   className?: string;
+  titleClassName?: string; // Add this property
 }
 
 const SectionTitle: React.FC<SectionTitleProps> = ({
@@ -16,13 +17,14 @@ const SectionTitle: React.FC<SectionTitleProps> = ({
   center = false,
   light = false,
   className = "",
+  titleClassName = "", // Add default value
 }) => {
   return (
     <div className={`mb-12 ${center ? 'text-center' : ''} ${className}`}>
       <ScrollReveal>
         <h2 
           className={`text-3xl md:text-4xl lg:text-5xl font-playfair font-bold mb-4 
-            ${light ? 'text-white' : 'text-royal'}`}
+            ${light ? 'text-white' : 'text-royal'} ${titleClassName}`}
         >
           {title}
         </h2>

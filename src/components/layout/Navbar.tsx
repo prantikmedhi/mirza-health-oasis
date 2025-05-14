@@ -21,12 +21,14 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white/95 backdrop-blur-md shadow-md py-2' : 'bg-transparent py-4'
+        isScrolled ? 'bg-white/95 backdrop-blur-md shadow-md py-2 sticky top-0' : 'bg-transparent py-4'
       }`}
+      role="navigation"
+      aria-label="Main navigation"
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
-        <Link to="/" className="flex items-center">
-          <img src={logoUrl} alt="Mirza Hospital" className="h-10 md:h-12" />
+        <Link to="/" className="flex items-center" aria-label="Return to homepage">
+          <img src={logoUrl} alt="Mirza Hospital Logo" className="h-10 md:h-12" />
         </Link>
 
         {/* Desktop Menu */}
@@ -40,6 +42,7 @@ const Navbar = () => {
           <Link 
             to="/appointment" 
             className="bg-teal text-white hover:bg-teal-light px-4 py-2 rounded transition-colors duration-300"
+            aria-label="Book an appointment"
           >
             Appointment
           </Link>
@@ -49,6 +52,9 @@ const Navbar = () => {
         <button 
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           className="lg:hidden text-teal focus:outline-none"
+          aria-expanded={isMobileMenuOpen}
+          aria-controls="mobile-menu"
+          aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
         >
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
             {isMobileMenuOpen ? (
@@ -62,7 +68,11 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden bg-white/95 backdrop-blur-md shadow-md absolute top-full left-0 right-0 animate-fade-in">
+        <div 
+          className="lg:hidden bg-white/95 backdrop-blur-md shadow-md absolute top-full left-0 right-0 animate-fade-in"
+          id="mobile-menu"
+          role="menu"
+        >
           <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
             <MobileNavLink to="/" onClick={() => setIsMobileMenuOpen(false)}>Home</MobileNavLink>
             <MobileNavLink to="/about" onClick={() => setIsMobileMenuOpen(false)}>About</MobileNavLink>
@@ -74,6 +84,7 @@ const Navbar = () => {
               to="/appointment" 
               className="bg-teal text-white hover:bg-teal-light px-4 py-2 rounded text-center transition-colors duration-300"
               onClick={() => setIsMobileMenuOpen(false)}
+              aria-label="Book an appointment"
             >
               Appointment
             </Link>
