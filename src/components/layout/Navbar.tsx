@@ -26,13 +26,13 @@ const Navbar = () => {
       aria-label="Main navigation"
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
-        <Link to="/" className="flex items-center space-x-3 align-middle" aria-label="Return to homepage">
+        
+<Link to="/" className="flex items-center space-x-3 align-middle" aria-label="Return to homepage">
   <img src={logoUrl} alt="Mirza Hospital Logo" className="h-14 md:h-14" />
-  <span className="text-xl font-semibold" style={{ color: '#1E2C5E' }}>
+  <span className="text-xl font-semibold whitespace-nowrap" style={{ color: '#1E2C5E' }}>
     Mirza Multispeciality Hospital
   </span>
 </Link>
-
         {/* Desktop Menu */}
         <div className="hidden lg:flex space-x-8">
           <NavLink to="/">Home</NavLink>
