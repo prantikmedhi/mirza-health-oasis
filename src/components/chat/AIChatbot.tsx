@@ -90,11 +90,19 @@ const AIChatbot = () => {
   onClick={() => setIsOpen(!isOpen)}
   aria-label="Chat with Mirza AI"
 >
-  <img
-    src="/chatbot-icon.png" // replace with your actual image file name
-    alt="Chat Icon"
-    className="w-10 h-10"
-  />
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="#A4DED6"
+  strokeWidth="2"
+  strokeLinecap="round"
+  strokeLinejoin="round"
+  className="w-10 h-10"
+>
+  <path d="M3 4a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H7l-4 4V4z" />
+  <path d="M18 3.5L19 5l1-1.5L21 5l-1 1.5L19 5l-1 1.5L17 5l1-1.5z" />
+</svg>
 </button>
 
       {/* Tooltip */}
