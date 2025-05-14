@@ -1,5 +1,7 @@
+
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { Menu } from 'lucide-react';
 
 // Logo URL - replace with your actual logo
 const logoUrl = 'https://i.postimg.cc/KckSmbGh/IMG-7163.png';
@@ -27,14 +29,20 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
         
-<Link to="/" className="flex items-center space-x-2 align-middle" aria-label="Return to homepage">
-  <img src={logoUrl} alt="Mirza Hospital Logo" className="h-14 md:h-14" />
-  <span className="text-xl font-bold whitespace-nowrap" style={{ color: '#1E2C5E' }}>
-    Mirza Multispeciality<br className="hidden md:inline" /> Hospital
-  </span>
-</Link>
+        <Link to="/" className="flex items-center gap-3" aria-label="Return to homepage">
+          <img src={logoUrl} alt="Mirza Hospital Logo" className="h-12 md:h-14 object-contain" />
+          <div className="flex flex-col">
+            <span className="text-lg md:text-xl font-bold leading-tight text-royal">
+              Mirza Multispeciality
+            </span>
+            <span className="text-md md:text-lg font-semibold text-royal">
+              Hospital
+            </span>
+          </div>
+        </Link>
+
         {/* Desktop Menu */}
-        <div className="hidden lg:flex space-x-8">
+        <div className="hidden lg:flex items-center space-x-6">
           <NavLink to="/">Home</NavLink>
           <NavLink to="/about">About</NavLink>
           <NavLink to="/services">Services</NavLink>
@@ -43,7 +51,7 @@ const Navbar = () => {
           <NavLink to="/contact">Contact</NavLink>
           <Link 
             to="/appointment" 
-            className="bg-teal text-white hover:bg-teal-light px-4 py-2 rounded transition-colors duration-300"
+            className="bg-teal hover:bg-teal-light text-white px-5 py-2 rounded-md transition-colors duration-300 shadow-sm"
             aria-label="Book an appointment"
           >
             Appointment
@@ -58,24 +66,18 @@ const Navbar = () => {
           aria-controls="mobile-menu"
           aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
         >
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-            {isMobileMenuOpen ? (
-              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-            ) : (
-              <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-            )}
-          </svg>
+          <Menu className="w-6 h-6" />
         </button>
       </div>
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div 
-          className="lg:hidden bg-white/95 backdrop-blur-md shadow-md absolute top-full left-0 right-0 animate-fade-in"
+          className="lg:hidden bg-white/95 backdrop-blur-md shadow-md absolute top-full left-0 right-0 animate-fade-in z-50"
           id="mobile-menu"
           role="menu"
         >
-          <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
+          <div className="container mx-auto px-4 py-4 flex flex-col space-y-3">
             <MobileNavLink to="/" onClick={() => setIsMobileMenuOpen(false)}>Home</MobileNavLink>
             <MobileNavLink to="/about" onClick={() => setIsMobileMenuOpen(false)}>About</MobileNavLink>
             <MobileNavLink to="/services" onClick={() => setIsMobileMenuOpen(false)}>Services</MobileNavLink>
@@ -84,7 +86,7 @@ const Navbar = () => {
             <MobileNavLink to="/contact" onClick={() => setIsMobileMenuOpen(false)}>Contact</MobileNavLink>
             <Link 
               to="/appointment" 
-              className="bg-teal text-white hover:bg-teal-light px-4 py-2 rounded text-center transition-colors duration-300"
+              className="bg-teal text-white hover:bg-teal-light px-4 py-3 rounded text-center transition-colors duration-300 font-medium"
               onClick={() => setIsMobileMenuOpen(false)}
               aria-label="Book an appointment"
             >
