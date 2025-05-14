@@ -77,8 +77,19 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-white/20 mt-8 pt-8 text-center text-sm text-gray-200">
-          <p>&copy; {new Date().getFullYear()} Mirza Multispeciality Hospital. All rights reserved.</p>
-        </div>
+  <p>&copy; {new Date().getFullYear()} Mirza Multispeciality Hospital. All rights reserved.</p>
+  <p>
+    Website Designed By{" "}
+    <a
+      href="https://growvaa.in"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-skyblue-light font-semibold hover:underline"
+    >
+      Growvaa
+    </a>
+  </p>
+</div>
       </div>
     </footer>
   );
