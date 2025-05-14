@@ -242,7 +242,7 @@ const DepartmentsPage = () => {
               </h1>
             </ScrollReveal>
             <ScrollReveal delay={200}>
-              <p className="text-xl text-teal-700 max-w-3xl mx-auto">
+              <p className="text-xl max-w-3xl mx-auto" style={{ color: "#1E2C5E" }}>
   Specialized medical departments staffed by experienced professionals
 </p>
             </ScrollReveal>
