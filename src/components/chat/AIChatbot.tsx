@@ -3,7 +3,10 @@ import { useState, useEffect, useRef } from 'react';
 const AIChatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<{ sender: string, text: string }[]>([
-    { sender: 'bot', text: "Hello! I'm Bugs Bunny! What's your name, doc?" }
+    {
+      sender: 'bot',
+      text: "Welcome to Mirza Multispeciality Hospital! May I know your name to assist you better?"
+    }
   ]);
   const [input, setInput] = useState('');
   const [isTyping, setIsTyping] = useState(false);
@@ -14,8 +17,6 @@ const AIChatbot = () => {
 You are the helpful AI assistant of Mirza Multispeciality Hospital. Your role is to guide visitors, answer questions politely, and provide useful information about the hospital’s services. Speak clearly and compassionately like a caring medical staff member. Do not use medical jargon. Your answers should sound warm, human, and empathetic.
 
 Begin by asking the user's name so you can address them personally in the conversation.
-
-Here’s some context about the hospital you should use when responding:
 
 🏥 About: Mirza Multispeciality Hospital provides high-quality, patient-centric healthcare with personalized attention and care.
 
@@ -37,9 +38,8 @@ Here’s some context about the hospital you should use when responding:
 
 📍 Location: Tech City, Mirza, Near IITG, Bongora, Guwahati, Assam-781015
 📞 Contact: +91 8011673568 / +91 8011260929
-
-You should not answer deep medical questions—just help users book appointments, find services, or learn about the hospital.
 `;
+
   useEffect(() => {
     if (chatEndRef.current) {
       chatEndRef.current.scrollIntoView({ behavior: 'smooth' });
@@ -49,28 +49,32 @@ You should not answer deep medical questions—just help users book appointments
   const sendToWebSocket = (message: string) => {
     const websocket = new WebSocket('wss://backend.buildpicoapps.com/api/chatbot/chat');
     setIsTyping(true);
+    let botMessage = '';
 
     websocket.onopen = () => {
       websocket.send(JSON.stringify({
         chatId: chatId.current,
-        appId: "fire-person",
+        appId: 'fire-person',
         systemPrompt,
         message
       }));
     };
 
     websocket.onmessage = (event) => {
-      const text = event.data;
-      setMessages(prev => [...prev, { sender: 'bot', text }]);
+      botMessage += event.data;
+    };
+
+    websocket.onclose = () => {
+      if (botMessage.trim()) {
+        setMessages(prev => [...prev, { sender: 'bot', text: botMessage }]);
+      } else {
+        setMessages(prev => [...prev, { sender: 'bot', text: 'Oops! No response received.' }]);
+      }
       setIsTyping(false);
     };
 
     websocket.onerror = () => {
-      setMessages(prev => [...prev, { sender: 'bot', text: 'Oops! Something went wrong. Try again later.' }]);
-      setIsTyping(false);
-    };
-
-    websocket.onclose = () => {
+      setMessages(prev => [...prev, { sender: 'bot', text: 'Connection error. Please try again later.' }]);
       setIsTyping(false);
     };
   };
@@ -78,7 +82,6 @@ You should not answer deep medical questions—just help users book appointments
   const handleSendMessage = (e: React.FormEvent) => {
     e.preventDefault();
     if (!input.trim()) return;
-
     const userMessage = { sender: 'user', text: input };
     setMessages(prev => [...prev, userMessage]);
     sendToWebSocket(input);
@@ -87,60 +90,90 @@ You should not answer deep medical questions—just help users book appointments
 
   return (
     <>
-      <button 
-        className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-teal text-white shadow-lg flex items-center justify-center"
+      {/* Chat Button */}
+      <button
+        className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-white border-2 border-teal shadow-lg flex items-center justify-center"
         onClick={() => setIsOpen(!isOpen)}
-        aria-label="Chat with AI"
+        aria-label="Chat with Mirza AI"
       >
-        {isOpen ? '×' : '?'}
+        <img src="/logo-mirza.svg" alt="Mirza Logo" className="w-8 h-8" />
       </button>
 
+      {/* Tooltip */}
       {!isOpen && (
         <div className="fixed bottom-24 right-6 bg-white text-teal px-4 py-2 rounded shadow z-50">
-          <p className="text-sm">Personalize your AI below</p>
+          <p className="text-sm">Ask Mirza AI Assistant</p>
         </div>
       )}
 
+      {/* Chatbox */}
       {isOpen && (
-        <div className="fixed bottom-24 right-6 w-80 md:w-96 h-96 bg-white rounded-lg shadow-lg flex flex-col overflow-hidden">
+        <div className="fixed bottom-24 right-6 w-80 md:w-96 h-[480px] bg-white rounded-xl shadow-xl flex flex-col overflow-hidden z-50">
+          {/* Header */}
           <div className="bg-teal text-white p-4">
-            <h3 className="text-lg font-semibold">Bugs Bunny AI</h3>
-            <p className="text-xs">Ask questions and get fun hints!</p>
+            <h3 className="font-semibold text-base">Mirza Multispeciality Hospital AI Chatbot</h3>
+            <p className="text-xs opacity-80">Ask me anything about our hospital</p>
           </div>
 
-          <div className="flex-1 overflow-y-auto p-4 space-y-3">
-            {messages.map((msg, idx) => (
-              <div key={idx} className={`flex ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}>
-                <div className={`p-3 rounded-lg ${msg.sender === 'user' ? 'bg-teal text-white' : 'bg-gray-200 text-black'}`}>
+          {/* Chat messages */}
+          <div className="flex-1 overflow-y-auto p-4 space-y-3 bg-gray-50">
+            {messages.map((msg, i) => (
+              <div
+                key={i}
+                className={`flex ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}
+              >
+                <div
+                  className={`max-w-[80%] p-3 rounded-lg text-sm whitespace-pre-line ${
+                    msg.sender === 'user'
+                      ? 'bg-teal text-white rounded-tr-none'
+                      : 'bg-gray-200 text-black rounded-tl-none'
+                  }`}
+                >
                   {msg.text}
                 </div>
               </div>
             ))}
             {isTyping && (
               <div className="flex justify-start">
-                <div className="bg-gray-200 text-black p-3 rounded-lg">Typing...</div>
+                <div className="bg-gray-200 text-black p-3 rounded-lg rounded-tl-none">
+                  Typing...
+                </div>
               </div>
             )}
             <div ref={chatEndRef}></div>
           </div>
 
-          <form onSubmit={handleSendMessage} className="p-3 border-t">
-            <div className="flex space-x-2">
+          {/* Input */}
+          <form onSubmit={handleSendMessage} className="p-3 border-t bg-white">
+            <div className="flex items-center space-x-2">
               <input
                 type="text"
                 value={input}
-                onChange={e => setInput(e.target.value)}
-                className="flex-1 border px-4 py-2 rounded-full"
+                onChange={(e) => setInput(e.target.value)}
+                className="flex-1 border px-4 py-2 rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-teal"
                 placeholder="Type your message..."
               />
               <button
                 type="submit"
-                className="bg-teal text-white px-4 py-2 rounded-full"
+                className="bg-teal text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-teal-600 transition"
               >
-                Send
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none" viewBox="0 0 24 24"
+                  strokeWidth={2}
+                  stroke="currentColor"
+                  className="w-5 h-5"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 12L3 3l18 9-18 9 3-9z" />
+                </svg>
               </button>
             </div>
           </form>
+
+          {/* Powered By */}
+          <div className="text-center text-xs text-gray-500 py-1 bg-gray-50 border-t">
+            Powered by <span className="font-semibold text-teal-600">Growvaa</span>
+          </div>
         </div>
       )}
     </>
