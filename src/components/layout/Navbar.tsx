@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -27,8 +26,11 @@ const Navbar = () => {
       aria-label="Main navigation"
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
-        <Link to="/" className="flex items-center" aria-label="Return to homepage">
+        <Link to="/" className="flex items-center space-x-3" aria-label="Return to homepage">
           <img src={logoUrl} alt="Mirza Hospital Logo" className="h-10 md:h-12" />
+          <span className="text-xl font-semibold text-charcoal hidden sm:inline">
+            Mirza Multispeciality Hospital
+          </span>
         </Link>
 
         {/* Desktop Menu */}
