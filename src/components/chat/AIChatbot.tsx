@@ -107,7 +107,7 @@ const AIChatbot = () => {
       {/* Tooltip */}
       {!isOpen && (
         <div className="fixed bottom-24 right-6 bg-white text-teal px-4 py-2 rounded shadow z-50">
-          <p className="text-sm">Ask Mirza AI Assistant</p>
+          <p className="text-sm">Ask MMH AI Assistant</p>
         </div>
       )}
 
