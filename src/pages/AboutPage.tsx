@@ -1,4 +1,3 @@
-
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import SectionTitle from '../components/ui/SectionTitle';
@@ -21,7 +20,7 @@ const AboutPage = () => {
               </h1>
             </ScrollReveal>
             <ScrollReveal delay={200}>
-              <p className="text-xl max-w-3xl mx-auto">
+              <p className="text-xl max-w-3xl mx-auto text-white font-medium">
                 Discover our mission, values, and commitment to providing quality healthcare
               </p>
             </ScrollReveal>
@@ -222,7 +221,7 @@ const AboutPage = () => {
             </h2>
           </ScrollReveal>
           <ScrollReveal delay={200}>
-            <p className="text-xl mb-8 max-w-2xl mx-auto">
+            <p className="text-xl mb-8 max-w-2xl mx-auto text-white font-medium">
               Book an appointment with our specialists or contact us for more information.
             </p>
           </ScrollReveal>

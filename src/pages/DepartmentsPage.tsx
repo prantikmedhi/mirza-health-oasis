@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import SectionTitle from '../components/ui/SectionTitle';
 import ScrollReveal from '../components/ui/ScrollReveal';
@@ -242,9 +241,9 @@ const DepartmentsPage = () => {
               </h1>
             </ScrollReveal>
             <ScrollReveal delay={200}>
-              <p className="text-xl max-w-3xl mx-auto" style={{ color: "#1E2C5E" }}>
-  Specialized medical departments staffed by experienced professionals
-</p>
+              <p className="text-xl max-w-3xl mx-auto text-white font-medium">
+                Specialized medical departments staffed by experienced professionals
+              </p>
             </ScrollReveal>
           </div>
         </div>
@@ -349,7 +348,7 @@ const DepartmentsPage = () => {
             </h2>
           </ScrollReveal>
           <ScrollReveal delay={200}>
-            <p className="text-xl mb-8 max-w-2xl mx-auto">
+            <p className="text-xl mb-8 max-w-2xl mx-auto text-white font-medium">
               Book an appointment with our experienced doctors today.
             </p>
           </ScrollReveal>

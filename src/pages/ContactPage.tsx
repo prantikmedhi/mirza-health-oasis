@@ -33,14 +33,14 @@ const ContactPage = () => {
       {/* Hero Section */}
       <section className="bg-royal py-16 md:py-24">
         <div className="container mx-auto px-4">
-          <div className="text-center text-white">
+          <div className="text-center">
             <ScrollReveal>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-playfair font-bold mb-4">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-playfair font-bold mb-4 text-white">
                 Contact Us
               </h1>
             </ScrollReveal>
             <ScrollReveal delay={200}>
-              <p className="text-xl max-w-3xl mx-auto">
+              <p className="text-xl max-w-3xl mx-auto text-white font-medium">
                 We're here to help. Reach out to us with any questions or concerns.
               </p>
             </ScrollReveal>

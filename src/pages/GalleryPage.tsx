@@ -97,14 +97,14 @@ const GalleryPage = () => {
       {/* Hero Section */}
       <section className="bg-royal py-16 md:py-24">
         <div className="container mx-auto px-4">
-          <div className="text-center text-white">
+          <div className="text-center">
             <ScrollReveal>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-playfair font-bold mb-4">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-playfair font-bold mb-4 text-white">
                 Gallery
               </h1>
             </ScrollReveal>
             <ScrollReveal delay={200}>
-              <p className="text-xl max-w-3xl mx-auto">
+              <p className="text-xl max-w-3xl mx-auto text-white font-medium">
                 Take a visual tour of our hospital facilities, staff, and patient care
               </p>
             </ScrollReveal>
@@ -127,7 +127,7 @@ const GalleryPage = () => {
               <button 
                 className={`px-4 py-2 rounded-full transition-colors ${
                   selectedCategory === 'all' 
-                    ? 'bg-royal text-white' 
+                    ? 'bg-royal text-white shadow-md' 
                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                 }`}
                 onClick={() => setSelectedCategory('all')}
@@ -137,7 +137,7 @@ const GalleryPage = () => {
               <button 
                 className={`px-4 py-2 rounded-full transition-colors ${
                   selectedCategory === 'facilities' 
-                    ? 'bg-royal text-white' 
+                    ? 'bg-royal text-white shadow-md' 
                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                 }`}
                 onClick={() => setSelectedCategory('facilities')}
@@ -147,7 +147,7 @@ const GalleryPage = () => {
               <button 
                 className={`px-4 py-2 rounded-full transition-colors ${
                   selectedCategory === 'staff' 
-                    ? 'bg-royal text-white' 
+                    ? 'bg-royal text-white shadow-md' 
                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                 }`}
                 onClick={() => setSelectedCategory('staff')}
@@ -157,7 +157,7 @@ const GalleryPage = () => {
               <button 
                 className={`px-4 py-2 rounded-full transition-colors ${
                   selectedCategory === 'care' 
-                    ? 'bg-royal text-white' 
+                    ? 'bg-royal text-white shadow-md' 
                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                 }`}
                 onClick={() => setSelectedCategory('care')}
@@ -167,12 +167,14 @@ const GalleryPage = () => {
             </div>
           </ScrollReveal>
 
-          {/* Gallery Grid */}
+          {/* Gallery Grid - Show all images with opacity effect for non-selected categories */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredImages.map((image, index) => (
+            {galleryImages.map((image, index) => (
               <ScrollReveal key={image.id} delay={index * 100}>
                 <div 
-                  className="overflow-hidden rounded-lg shadow-md cursor-pointer transform transition-transform duration-300 hover:scale-105 hover:shadow-lg"
+                  className={`overflow-hidden rounded-lg shadow-md cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-lg ${
+                    selectedCategory !== "all" && image.category !== selectedCategory ? "opacity-40" : ""
+                  }`}
                   onClick={() => openLightbox(image)}
                 >
                   <div className="aspect-w-16 aspect-h-9 relative">

@@ -78,6 +78,11 @@ const config: Config = {
 
         // Add your custom color here
         customBlue: "#1E2C5E",
+        royal: "#1E2C5E",
+        gold: "#FFD700",
+        "soft-grey": "#F5F7FA",
+        "royal-light": "#2E3E78",
+        "gold-light": "#FFE44D",
       },
       fontFamily: {
         "dm-serif": ['"DM Serif Text"', "serif"],
