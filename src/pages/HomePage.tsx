@@ -1,3 +1,4 @@
+
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import ScrollReveal from '../components/ui/ScrollReveal';
@@ -22,8 +23,8 @@ const HomePage = () => {
           <div className="max-w-3xl text-white">
             <ScrollReveal>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-dm-serif font-bold mb-4 text-white">
-  Your Health Is Our Priority
-</h1>
+                Your Health Is Our Priority
+              </h1>
             </ScrollReveal>
             <ScrollReveal delay={200}>
               <p className="text-xl mb-8 text-gray-200">
@@ -105,6 +106,48 @@ const HomePage = () => {
                 </Link>
               </ScrollReveal>
             </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* Departments Preview */}
+      <section className="py-20 bg-softwhite">
+        <div className="container mx-auto px-4">
+          <SectionTitle 
+            title="Our Departments" 
+            subtitle="Specialized care across medical disciplines" 
+            center
+          />
+          
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <DepartmentCard 
+              name="Medicine"
+              count={4}
+              delay={0}
+            />
+            <DepartmentCard 
+              name="General Surgery"
+              count={6}
+              delay={200}
+            />
+            <DepartmentCard 
+              name="Pediatrics"
+              count={3}
+              delay={400}
+            />
+            <DepartmentCard 
+              name="Obstetrics & Gynaecology"
+              count={7}
+              delay={600}
+            />
+          </div>
+          
+          <div className="text-center mt-12">
+            <ScrollReveal delay={800}>
+              <Link to="/departments" className="btn-primary">
+                View All Departments
+              </Link>
+            </ScrollReveal>
           </div>
         </div>
       </section>
@@ -198,48 +241,6 @@ const HomePage = () => {
             <ScrollReveal delay={1200}>
               <Link to="/services" className="btn-primary">
                 View All Services
-              </Link>
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
-
-      {/* Departments Preview */}
-      <section className="py-20 bg-softwhite">
-        <div className="container mx-auto px-4">
-          <SectionTitle 
-            title="Our Departments" 
-            subtitle="Specialized care across medical disciplines" 
-            center
-          />
-          
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <DepartmentCard 
-              name="Medicine"
-              count={4}
-              delay={0}
-            />
-            <DepartmentCard 
-              name="General Surgery"
-              count={6}
-              delay={200}
-            />
-            <DepartmentCard 
-              name="Pediatrics"
-              count={3}
-              delay={400}
-            />
-            <DepartmentCard 
-              name="Obstetrics & Gynaecology"
-              count={7}
-              delay={600}
-            />
-          </div>
-          
-          <div className="text-center mt-12">
-            <ScrollReveal delay={800}>
-              <Link to="/departments" className="btn-primary">
-                View All Departments
               </Link>
             </ScrollReveal>
           </div>
