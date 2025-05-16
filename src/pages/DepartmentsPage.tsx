@@ -1,11 +1,18 @@
 import { useState, useEffect } from 'react';
 import SectionTitle from '../components/ui/SectionTitle';
 import ScrollReveal from '../components/ui/ScrollReveal';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import { Card, CardContent } from "@/components/ui/card";
+import { X } from "lucide-react";
 
 interface Doctor {
   id: number;
   name: string;
   specialty?: string;
+  education?: string;
+  experience?: string;
+  bio?: string;
+  image?: string;
 }
 
 interface Department {
@@ -18,20 +25,53 @@ interface Department {
 const DepartmentsPage = () => {
   const [activeTab, setActiveTab] = useState(1);
   const [departments, setDepartments] = useState<Department[]>([]);
+  const [selectedDoctor, setSelectedDoctor] = useState<Doctor | null>(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
     
-    // Set departments data
+    // Set departments data with enhanced doctor information
     setDepartments([
       {
         id: 1,
         name: "Medicine",
         doctors: [
-          { id: 1, name: "Dr. Arindam Roy Choudhury" },
-          { id: 2, name: "Dr. Bikash Das" },
-          { id: 3, name: "Dr. Jogesh Kalita" },
-          { id: 4, name: "Dr. Annu Gupta" }
+          { 
+            id: 1, 
+            name: "Dr. Arindam Roy Choudhury",
+            specialty: "Internal Medicine",
+            education: "MBBS, MD (Medicine)",
+            experience: "15+ years",
+            bio: "Dr. Arindam is a seasoned internist with extensive experience in treating complex medical conditions.",
+            image: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3"
+          },
+          { 
+            id: 2, 
+            name: "Dr. Bikash Das",
+            specialty: "General Medicine",
+            education: "MBBS, DNB",
+            experience: "12+ years",
+            bio: "Dr. Bikash specializes in preventive care and management of chronic diseases.",
+            image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3"
+          },
+          { 
+            id: 3, 
+            name: "Dr. Jogesh Kalita",
+            specialty: "Pulmonology",
+            education: "MBBS, MD (Pulmonary Medicine)",
+            experience: "10+ years",
+            bio: "Dr. Jogesh is an expert in respiratory disorders and sleep medicine.",
+            image: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3"
+          },
+          { 
+            id: 4, 
+            name: "Dr. Annu Gupta",
+            specialty: "Medical Oncology",
+            education: "MBBS, MD, DM (Medical Oncology)",
+            experience: "8+ years",
+            bio: "Dr. Annu specializes in medical management of various cancer treatments.",
+            image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3"
+          }
         ],
         icon: (
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
@@ -44,12 +84,60 @@ const DepartmentsPage = () => {
         id: 2,
         name: "General Surgery",
         doctors: [
-          { id: 1, name: "Dr. Gautam Das" },
-          { id: 2, name: "Dr. Kailash Thakuria" },
-          { id: 3, name: "Dr. Rubul Das" },
-          { id: 4, name: "Dr. John Kr. Kalita" },
-          { id: 5, name: "Dr. Najim Haque" },
-          { id: 6, name: "Dr. Ridip Mazumder" }
+          { 
+            id: 1, 
+            name: "Dr. Gautam Das",
+            specialty: "General Surgery",
+            education: "MBBS, MS (General Surgery)",
+            experience: "18+ years",
+            bio: "Dr. Gautam is an experienced general surgeon specializing in minimally invasive procedures.",
+            image: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3"
+          },
+          { 
+            id: 2, 
+            name: "Dr. Kailash Thakuria",
+            specialty: "Surgical Oncology",
+            education: "MBBS, MS, MCh (Surgical Oncology)",
+            experience: "16+ years",
+            bio: "Dr. Kailash is a surgical oncologist with expertise in complex cancer surgeries.",
+            image: "https://images.unsplash.com/photo-1537368910025-700350fe46c7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3"
+          },
+          { 
+            id: 3, 
+            name: "Dr. Rubul Das",
+            specialty: "Laparoscopic Surgery",
+            education: "MBBS, MS, FMAS",
+            experience: "12+ years",
+            bio: "Dr. Rubul specializes in advanced laparoscopic and robotic surgical techniques.",
+            image: "https://images.unsplash.com/photo-1622902046580-2b47f47f5471?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3"
+          },
+          { 
+            id: 4, 
+            name: "Dr. John Kr. Kalita",
+            specialty: "Gastrointestinal Surgery",
+            education: "MBBS, MS, DNB",
+            experience: "13+ years",
+            bio: "Dr. John focuses on gastrointestinal surgeries and has pioneered several new techniques in the field.",
+            image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3"
+          },
+          { 
+            id: 5, 
+            name: "Dr. Najim Haque",
+            specialty: "Vascular Surgery",
+            education: "MBBS, MS (Surgery), DNB (Vascular Surgery)",
+            experience: "9+ years",
+            bio: "Dr. Najim is specialized in vascular and endovascular surgeries.",
+            image: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3"
+          },
+          { 
+            id: 6, 
+            name: "Dr. Ridip Mazumder",
+            specialty: "Plastic Surgery",
+            education: "MBBS, MS, MCh (Plastic Surgery)",
+            experience: "11+ years",
+            bio: "Dr. Ridip is a skilled plastic surgeon specializing in reconstructive procedures.",
+            image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3"
+          }
         ],
         icon: (
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
@@ -117,8 +205,8 @@ const DepartmentsPage = () => {
         ],
         icon: (
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
-            <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-1.5-4.5 0-8 0 0-2.5 1-2.5 5 0 2 1 3 1 4s-.5 2-2.5 3c-1 .5-1.5 2-1.5 3.5.423-.966 1.405-1.5 2.5-1.5 2.5 0 2.5 2.5 2.5 2.5V20c0 .5-.5 1.5-2.5 1.5S3 19.5 3 17.5c0-1.5.5-3 2-4 1.5-1 2-2 2-2"></path>
-            <path d="M15.5 14.5A2.5 2.5 0 0 1 13 12c0-1.38.5-2 1-3 1.072-2.143 1.5-4.5 0-8 0 0 2.5 1 2.5 5 0 2-1 3-1 4s.5 2 2.5 3c1 .5 1.5 2 1.5 3.5-.423-.966-1.405-1.5-2.5-1.5-2.5 0-2.5 2.5-2.5 2.5V20c0 .5.5 1.5 2.5 1.5s2.5-2 2.5-4c0-1.5-.5-3-2-4-1.5-1-2-2-2-2"></path>
+            <path d="M8.5 14.5A2.5 2.5 0 1 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-1.5-4.5 0-8 0 0-2.5 1-2.5 5 0 2 1 3 1 4s-.5 2-2.5 3c-1 .5-1.5 2-1.5 3.5.423-.966 1.405-1.5-2.5-1.5-2.5 0-2.5 2.5-2.5 2.5V20c0 .5-.5 1.5-2.5 1.5S3 19.5 3 17.5c0-1.5.5-3 2-4 1.5-1 2-2 2-2"></path>
+            <path d="M15.5 14.5A2.5 2.5 0 1 1 13 12c0-1.38.5-2 1-3 1.072-2.143 1.5-4.5 0-8 0 0 2.5 1 2.5 5 0 2-1 3-1 4s.5 2 2.5 3c1 .5 1.5 2 1.5 3.5-.423-.966-1.405-1.5-2.5-1.5-2.5 0-2.5 2.5-2.5 2.5V20c0 .5.5 1.5 2.5 1.5s2.5-2 2.5-4c0-1.5-.5-3-2-4-1.5-1-2-2-2-2"></path>
           </svg>
         )
       },
@@ -229,6 +317,14 @@ const DepartmentsPage = () => {
     ]);
   }, []);
 
+  const handleDoctorClick = (doctor: Doctor) => {
+    setSelectedDoctor(doctor);
+  };
+
+  const closeDialog = () => {
+    setSelectedDoctor(null);
+  };
+
   return (
     <div className="pt-20">
       {/* Hero Section */}
@@ -293,30 +389,43 @@ const DepartmentsPage = () => {
                       {dept.name} Department
                     </h3>
                     
-                    <div className="grid md:grid-cols-2 gap-6">
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                       {dept.doctors.map((doctor) => (
-                        <div 
+                        <Card 
                           key={doctor.id}
-                          className="bg-white p-5 rounded-lg shadow hover:shadow-md transition-shadow border border-gray-200 flex items-center"
+                          className="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition-all cursor-pointer"
+                          onClick={() => handleDoctorClick(doctor)}
                         >
-                          {/* Doctor avatar placeholder */}
-                          <div className="w-16 h-16 bg-royal/10 rounded-full flex items-center justify-center mr-4 text-royal flex-shrink-0">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
+                          <div className="h-48 overflow-hidden">
+                            {doctor.image ? (
+                              <img 
+                                src={doctor.image} 
+                                alt={doctor.name} 
+                                className="w-full h-full object-cover transition-transform hover:scale-105"
+                              />
+                            ) : (
+                              <div className="w-full h-full bg-royal/10 flex items-center justify-center text-royal">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                              </div>
+                            )}
                           </div>
                           
-                          <div>
+                          <CardContent className="p-4">
                             <h4 className="text-lg font-medium text-royal">
                               {doctor.name}
                             </h4>
                             {doctor.specialty && (
-                              <p className="text-gray-500 text-sm">
+                              <p className="text-gray-500 text-sm mt-1">
                                 {doctor.specialty}
                               </p>
                             )}
-                          </div>
-                        </div>
+                            <div className="mt-2 text-sm text-gray-600">
+                              <p>Click for more details</p>
+                            </div>
+                          </CardContent>
+                        </Card>
                       ))}
                     </div>
                   </div>
@@ -326,6 +435,72 @@ const DepartmentsPage = () => {
           </div>
         </div>
       </section>
+
+      {/* Doctor Details Dialog */}
+      <Dialog open={selectedDoctor !== null} onOpenChange={closeDialog}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle className="flex items-center justify-between">
+              <span className="text-royal">{selectedDoctor?.name}</span>
+              <button 
+                onClick={closeDialog} 
+                className="ml-auto inline-flex h-8 w-8 items-center justify-center rounded-md hover:bg-gray-100"
+              >
+                <X className="h-4 w-4" />
+              </button>
+            </DialogTitle>
+            <DialogDescription>
+              {selectedDoctor?.specialty}
+            </DialogDescription>
+          </DialogHeader>
+          
+          <div className="grid gap-4 py-4">
+            {selectedDoctor?.image && (
+              <div className="overflow-hidden rounded-md">
+                <img 
+                  src={selectedDoctor.image} 
+                  alt={selectedDoctor.name} 
+                  className="w-full h-64 object-cover object-center"
+                />
+              </div>
+            )}
+            
+            <div className="space-y-4">
+              {selectedDoctor?.bio && (
+                <div>
+                  <h4 className="text-sm font-medium text-gray-500">About</h4>
+                  <p className="text-sm">{selectedDoctor.bio}</p>
+                </div>
+              )}
+              
+              <div className="grid grid-cols-2 gap-4">
+                {selectedDoctor?.education && (
+                  <div>
+                    <h4 className="text-sm font-medium text-gray-500">Education</h4>
+                    <p className="text-sm">{selectedDoctor.education}</p>
+                  </div>
+                )}
+                
+                {selectedDoctor?.experience && (
+                  <div>
+                    <h4 className="text-sm font-medium text-gray-500">Experience</h4>
+                    <p className="text-sm">{selectedDoctor.experience}</p>
+                  </div>
+                )}
+              </div>
+              
+              <div className="pt-2">
+                <button 
+                  onClick={() => window.location.href = "/appointment"}
+                  className="bg-royal text-white px-4 py-2 rounded hover:bg-royal/90 transition-colors w-full"
+                >
+                  Book Appointment
+                </button>
+              </div>
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
 
       {/* Statistics */}
       <section className="py-16 bg-soft-grey">
