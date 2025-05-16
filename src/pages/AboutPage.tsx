@@ -61,6 +61,107 @@ const AboutPage = () => {
         </div>
       </section>
 
+      {/* Departments Section - NEW */}
+      <section className="py-16 md:py-24 bg-soft-grey">
+        <div className="container mx-auto px-4">
+          <SectionTitle 
+            title="Our Departments" 
+            subtitle="Specialized care across medical disciplines" 
+            center
+          />
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 mt-12">
+            <DepartmentCircle 
+              name="Cardiology" 
+              icon="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+              delay={0}
+            />
+            <DepartmentCircle 
+              name="Neurology" 
+              icon="https://images.unsplash.com/photo-1559757175-4c27ce8509c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80"
+              delay={100}
+            />
+            <DepartmentCircle 
+              name="Orthopedics" 
+              icon="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+              delay={200}
+            />
+            <DepartmentCircle 
+              name="Gynecology" 
+              icon="https://images.unsplash.com/photo-1595152452543-e5fc28ebc2b8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1480&q=80"
+              delay={300}
+            />
+            <DepartmentCircle 
+              name="Pediatrics" 
+              icon="https://images.unsplash.com/photo-1577897097470-81e6ddb2c81f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+              delay={400}
+            />
+            <DepartmentCircle 
+              name="Oncology" 
+              icon="https://images.unsplash.com/photo-1579154341098-e4e71144965a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+              delay={500}
+            />
+          </div>
+          <div className="text-center mt-12">
+            <ScrollReveal delay={600}>
+              <Link to="/departments" className="btn-primary">
+                View All Departments
+              </Link>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+      
+      {/* Services Section - NEW */}
+      <section className="py-16 md:py-24 bg-white">
+        <div className="container mx-auto px-4">
+          <SectionTitle 
+            title="Our Services" 
+            subtitle="We offer a wide range of medical services to meet your healthcare needs" 
+            center
+          />
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+            <ServiceCard 
+              title="Emergency Care"
+              description="24/7 emergency medical services for critical conditions and injuries with quick response time."
+              icon={
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.58 12H8.42M12 5.83v12.34" />
+                </svg>
+              }
+              delay={0}
+            />
+            <ServiceCard 
+              title="Diagnostic Services"
+              description="Comprehensive diagnostic testing including laboratory tests, imaging, and specialized screenings."
+              icon={
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+                </svg>
+              }
+              delay={200}
+            />
+            <ServiceCard 
+              title="Surgical Services"
+              description="Advanced surgical procedures with state-of-the-art equipment and experienced surgeons."
+              icon={
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5zm0 0L3 9m9 5l9-5" />
+                </svg>
+              }
+              delay={400}
+            />
+          </div>
+          <div className="text-center mt-12">
+            <ScrollReveal delay={600}>
+              <Link to="/services" className="btn-primary">
+                View All Services
+              </Link>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
       {/* Vision & Mission */}
       <section className="py-16 md:py-24 bg-soft-grey">
         <div className="container mx-auto px-4">
@@ -263,6 +364,61 @@ const CoreValueCard: React.FC<CoreValueCardProps> = ({ title, description, icon,
         </div>
         <h3 className="text-xl font-playfair font-bold text-royal mb-2">{title}</h3>
         <p className="text-gray-600">{description}</p>
+      </div>
+    </ScrollReveal>
+  );
+};
+
+// New Department Circle Component
+interface DepartmentCircleProps {
+  name: string;
+  icon: string;
+  delay?: number;
+}
+
+const DepartmentCircle: React.FC<DepartmentCircleProps> = ({ name, icon, delay = 0 }) => {
+  return (
+    <ScrollReveal delay={delay}>
+      <Link to="/departments" className="flex flex-col items-center group">
+        <div className="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden border-4 border-royal/20 hover:border-royal transition-all duration-300 mb-4 shadow-lg">
+          <img 
+            src={icon} 
+            alt={name} 
+            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+          />
+        </div>
+        <h3 className="text-lg font-bold text-royal text-center group-hover:text-royal-light transition-colors duration-300">{name}</h3>
+      </Link>
+    </ScrollReveal>
+  );
+};
+
+// New Service Card Component
+interface ServiceCardProps {
+  title: string;
+  description: string;
+  icon: React.ReactNode;
+  delay?: number;
+}
+
+const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, icon, delay = 0 }) => {
+  return (
+    <ScrollReveal delay={delay}>
+      <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-100">
+        <div className="w-16 h-16 bg-royal/10 rounded-full flex items-center justify-center mb-6 text-royal">
+          {icon}
+        </div>
+        <h3 className="text-xl font-playfair font-bold text-royal mb-2">{title}</h3>
+        <p className="text-gray-600 mb-4">{description}</p>
+        <Link 
+          to="/services" 
+          className="inline-flex items-center text-royal hover:text-royal-light transition-colors duration-300 font-medium"
+        >
+          Learn More
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7-7 7" />
+          </svg>
+        </Link>
       </div>
     </ScrollReveal>
   );
