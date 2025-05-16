@@ -1,8 +1,9 @@
-
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import SectionTitle from '../components/ui/SectionTitle';
 import ScrollReveal from '../components/ui/ScrollReveal';
+import { Avatar, AvatarFallback, AvatarImage } from '../components/ui/avatar';
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '../components/ui/card';
 
 const AboutPage = () => {
   useEffect(() => {
@@ -100,6 +101,29 @@ const AboutPage = () => {
                 </p>
               </div>
             </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* Directors Section */}
+      <section className="py-16 md:py-24 bg-white">
+        <div className="container mx-auto px-4">
+          <SectionTitle 
+            title="Our Directors" 
+            subtitle="Meet the experienced leadership team behind our hospital" 
+            center
+          />
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
+            {directors.map((director, index) => (
+              <DirectorCard 
+                key={director.id}
+                name={director.name}
+                position={director.position}
+                image={director.image}
+                details={director.details}
+                delay={index * 200}
+              />
+            ))}
           </div>
         </div>
       </section>
@@ -245,6 +269,68 @@ const AboutPage = () => {
         </div>
       </section>
     </div>
+  );
+};
+
+// Director data
+const directors = [
+  {
+    id: 1,
+    name: "Dr. Arjun Sharma",
+    position: "Chief Medical Director",
+    image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+    details: "Dr. Sharma brings over 25 years of medical expertise and healthcare management experience. He obtained his MD from AIIMS and has specialized training in Hospital Administration from Harvard Medical School."
+  },
+  {
+    id: 2,
+    name: "Dr. Priya Patel",
+    position: "Director of Clinical Operations",
+    image: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+    details: "With a focus on quality patient care, Dr. Patel oversees all clinical operations. She holds an MBBS from Manipal University and an MPH from Johns Hopkins, with 18 years in healthcare management."
+  },
+  {
+    id: 3,
+    name: "Mr. Rajiv Mehta",
+    position: "Director of Finance & Administration",
+    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+    details: "As a seasoned financial expert with an MBA from IIM Ahmedabad, Mr. Mehta ensures the hospital's financial stability and administrative efficiency with his 20 years of experience in healthcare finance."
+  },
+  {
+    id: 4,
+    name: "Dr. Meera Reddy",
+    position: "Director of Research & Development",
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80",
+    details: "Leading our research initiatives, Dr. Reddy has published over 50 research papers in international medical journals. She holds a PhD in Medical Sciences from Cambridge University and specializes in innovative medical technologies."
+  }
+];
+
+interface DirectorCardProps {
+  name: string;
+  position: string;
+  image: string;
+  details: string;
+  delay?: number;
+}
+
+const DirectorCard: React.FC<DirectorCardProps> = ({ name, position, image, details, delay = 0 }) => {
+  return (
+    <ScrollReveal delay={delay}>
+      <Card className="h-full hover:shadow-md transition-shadow duration-300">
+        <CardHeader className="text-center">
+          <div className="flex justify-center mb-4">
+            <Avatar className="h-32 w-32 border-2 border-gold">
+              <AvatarImage src={image} alt={name} className="object-cover" />
+              <AvatarFallback>{name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
+            </Avatar>
+          </div>
+          <CardTitle className="text-xl text-royal">{name}</CardTitle>
+          <CardDescription className="text-md text-gold font-medium">{position}</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <p className="text-gray-600 text-center">{details}</p>
+        </CardContent>
+      </Card>
+    </ScrollReveal>
   );
 };
 
