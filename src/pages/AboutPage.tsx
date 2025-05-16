@@ -105,11 +105,11 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* Directors Section */}
+      {/* Promoters Section */}
       <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4">
           <SectionTitle 
-            title="Our Directors" 
+            title="Our Promoters" 
             subtitle="Meet the experienced leadership team behind our hospital" 
             center
           />
