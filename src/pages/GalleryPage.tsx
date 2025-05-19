@@ -167,33 +167,28 @@ const GalleryPage = () => {
             </div>
           </ScrollReveal>
 
-          {/* Gallery Grid - Show all images with opacity effect for non-selected categories */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {galleryImages.map((image, index) => (
-              <ScrollReveal key={image.id} delay={index * 100}>
-                <div 
-                  className={`overflow-hidden rounded-lg shadow-md cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-lg ${
-                    selectedCategory !== "all" && image.category !== selectedCategory ? "opacity-40" : ""
-                  }`}
-                  onClick={() => openLightbox(image)}
-                >
-                  <div className="aspect-w-16 aspect-h-9 relative">
-                    <img 
-                      src={image.src} 
-                      alt={image.alt} 
-                      className="object-cover w-full h-64"
-                    />
-                    <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center">
-                      <span className="text-white text-lg font-medium">{image.alt}</span>
-                    </div>
-                  </div>
-                </div>
-              </ScrollReveal>
-            ))}
+          {/* Gallery Grid - Show filtered images */}
+<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+  {filteredImages.map((image, index) => (
+    <ScrollReveal key={image.id} delay={index * 100}>
+      <div 
+        className="overflow-hidden rounded-lg shadow-md cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-lg"
+        onClick={() => openLightbox(image)}
+      >
+        <div className="aspect-w-16 aspect-h-9 relative">
+          <img 
+            src={image.src} 
+            alt={image.alt} 
+            className="object-cover w-full h-64"
+          />
+          <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center">
+            <span className="text-white text-lg font-medium">{image.alt}</span>
           </div>
         </div>
-      </section>
-
+      </div>
+    </ScrollReveal>
+  ))}
+</div>
       {/* Lightbox */}
       {lightboxImage && (
         <div 
