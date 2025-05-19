@@ -167,7 +167,7 @@ const GalleryPage = () => {
             </div>
           </ScrollReveal>
 
-          {/* Gallery Grid - Show filtered images */}
+          {/* Gallery Grid - Show only images from selected category */}
 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
   {filteredImages.map((image, index) => (
     <ScrollReveal key={image.id} delay={index * 100}>
