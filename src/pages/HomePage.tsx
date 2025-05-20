@@ -59,8 +59,8 @@ const HomePage = () => {
             <ScrollReveal>
               <div className="relative">
                 <img 
-                  src="https://images.unsplash.com/photo-1504439468489-c8920d796a29?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" 
-                  alt="Hospital Building" 
+                  src="/IMG_7558.JPG" 
+                  alt="Mirza Multispeciality Hospital" 
                   className="w-full h-auto rounded-lg shadow-lg"
                 />
                 <div className="absolute -bottom-6 -right-6 bg-teal text-white p-6 rounded-lg shadow-lg hidden md:block">
