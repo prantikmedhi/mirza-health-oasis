@@ -215,9 +215,9 @@ const HomePage = () => {
       <section className="py-16 bg-teal text-white">
         <div className="container mx-auto px-4 text-center">
           <ScrollReveal>
-            <h2 className="text-3xl md:text-4xl font-dm-serif font-bold mb-4">
-              Need Medical Assistance?
-            </h2>
+            <h2 className="text-3xl md:text-4xl font-dm-serif font-bold mb-4 text-white">
+  Need Medical Assistance?
+</h2>
           </ScrollReveal>
           <ScrollReveal delay={200}>
             <p className="text-xl mb-8 max-w-2xl mx-auto">
