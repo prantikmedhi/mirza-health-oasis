@@ -11,7 +11,7 @@ const serviceImages = {
   surgery: '/IMG_7537.JPG',
   maternity: '/IMG_7589.JPEG',
   criticalCare: '/IMG_7562.JPG',
-  diabetology: '/Diabetology.png',
+  diabetology: '/IMG_7591.JPG',
 };
 
 const ServicesPage = () => {
