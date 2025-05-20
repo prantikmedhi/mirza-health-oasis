@@ -209,7 +209,7 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({
               </p>
             </ScrollReveal>
             <ScrollReveal delay={400}>
-              <ul className="space-y-3 mb-8 grid grid-cols-1 md:grid-cols-2 gap-2">
+              <ul className="space-y-3 mb-8">
                 {features.map((feature, index) => (
                   <li key={index} className="flex items-start">
                     <span className="text-teal font-bold mr-2">•</span>
