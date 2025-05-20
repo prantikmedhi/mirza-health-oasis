@@ -218,19 +218,19 @@ const galleryImages: GalleryImage[] = [
 },
 {
   id: 35,
-  src: "IMG_7294.JPG",
+  src: "IMG_7194.JPG",
   alt: "Reception",
   category: "Reciption"
 },
 {
   id: 36,
-  src: "IMG_7295.JPG",
+  src: "IMG_7195.JPG",
   alt: "Reception",
   category: "Reciption"
 },
 {
   id: 34,
-  src: "IMG_7296.JPG",
+  src: "IMG_7196.JPG",
   alt: "Reception",
   category: "Reciption"
 },
