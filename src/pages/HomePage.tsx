@@ -6,7 +6,7 @@ import SectionTitle from '../components/ui/SectionTitle';
 import { Card, CardContent } from '../components/ui/card';
 
 // Placeholder hospital image
-const hospitalImage = 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80';
+const hospitalImage = '/IMG_7550.JPEG';
 
 const HomePage = () => {
   useEffect(() => {
