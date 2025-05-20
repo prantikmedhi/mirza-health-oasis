@@ -11,7 +11,7 @@ const serviceImages = {
   surgery: '/IMG_7537.JPG',
   maternity: 'https://images.unsplash.com/photo-1632053002424-602900664db1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
   criticalCare: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
-  diabetology: 'https://images.unsplash.com/photo-1576671414121-aa7c5830366b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
+  diabetology: 'Diabetology.png',
 };
 
 const ServicesPage = () => {
