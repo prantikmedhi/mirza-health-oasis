@@ -9,7 +9,7 @@ const serviceImages = {
   emergency: '/IMG_7531.JPEG',
   opd: '/IMG_7211.JPG',
   surgery: '/IMG_7537.JPG',
-  maternity: 'https://images.unsplash.com/photo-1632053002424-602900664db1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
+  maternity: '/IMG_7589.JPEG',
   criticalCare: '/IMG_7562.JPG',
   diabetology: '/Diabetology.png',
 };
