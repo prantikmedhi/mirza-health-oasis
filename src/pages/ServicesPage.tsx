@@ -190,8 +190,8 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({
   return (
     <section className={`py-16 md:py-24 ${reverse ? 'bg-gray-50' : 'bg-white'}`}>
       <div className="container mx-auto px-4">
-        <div className={`grid md:grid-cols-2 gap-12 items-center ${reverse ? 'md:flex-row-reverse' : ''}`}>
-          <ScrollReveal>
+        <div className={`flex flex-col md:flex-row gap-12 items-center ${reverse ? 'md:flex-row-reverse' : ''}`}>
+          <ScrollReveal className="md:w-1/2">
             <div className="relative">
               <img 
                 src={imageSrc} 
@@ -201,7 +201,7 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({
               />
             </div>
           </ScrollReveal>
-          <div>
+          <div className="md:w-1/2">
             <SectionTitle title={title} />
             <ScrollReveal delay={200}>
               <p className="text-gray-700 mb-6">
@@ -209,12 +209,10 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({
               </p>
             </ScrollReveal>
             <ScrollReveal delay={400}>
-              <ul className="space-y-3 mb-8">
+              <ul className="space-y-3 mb-8 grid grid-cols-1 md:grid-cols-2 gap-2">
                 {features.map((feature, index) => (
                   <li key={index} className="flex items-start">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-teal mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
+                    <span className="text-teal font-bold mr-2">•</span>
                     <span className="text-gray-800">{feature}</span>
                   </li>
                 ))}

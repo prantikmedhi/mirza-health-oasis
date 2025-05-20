@@ -3,7 +3,7 @@ import SectionTitle from '../components/ui/SectionTitle';
 import ScrollReveal from '../components/ui/ScrollReveal';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Card, CardContent } from "@/components/ui/card";
-import { X } from "lucide-react";
+import { X, UserRound } from "lucide-react";
 
 interface Doctor {
   id: number;
@@ -42,8 +42,7 @@ const DepartmentsPage = () => {
             specialty: "Internal Medicine",
             education: "MBBS, MD (Medicine)",
             experience: "15+ years",
-            bio: "Dr. Arindam is a seasoned internist with extensive experience in treating complex medical conditions.",
-            image: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3"
+            bio: "Dr. Arindam is a seasoned internist with extensive experience in treating complex medical conditions."
           },
           { 
             id: 2, 
@@ -51,8 +50,7 @@ const DepartmentsPage = () => {
             specialty: "General Medicine",
             education: "MBBS, DNB",
             experience: "12+ years",
-            bio: "Dr. Bikash specializes in preventive care and management of chronic diseases.",
-            image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3"
+            bio: "Dr. Bikash specializes in preventive care and management of chronic diseases."
           },
           { 
             id: 3, 
@@ -60,8 +58,7 @@ const DepartmentsPage = () => {
             specialty: "Pulmonology",
             education: "MBBS, MD (Pulmonary Medicine)",
             experience: "10+ years",
-            bio: "Dr. Jogesh is an expert in respiratory disorders and sleep medicine.",
-            image: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3"
+            bio: "Dr. Jogesh is an expert in respiratory disorders and sleep medicine."
           },
           { 
             id: 4, 
@@ -69,8 +66,7 @@ const DepartmentsPage = () => {
             specialty: "Medical Oncology",
             education: "MBBS, MD, DM (Medical Oncology)",
             experience: "8+ years",
-            bio: "Dr. Annu specializes in medical management of various cancer treatments.",
-            image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3"
+            bio: "Dr. Annu specializes in medical management of various cancer treatments."
           }
         ],
         icon: (
@@ -90,8 +86,7 @@ const DepartmentsPage = () => {
             specialty: "General Surgery",
             education: "MBBS, MS (General Surgery)",
             experience: "18+ years",
-            bio: "Dr. Gautam is an experienced general surgeon specializing in minimally invasive procedures.",
-            image: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3"
+            bio: "Dr. Gautam is an experienced general surgeon specializing in minimally invasive procedures."
           },
           { 
             id: 2, 
@@ -99,8 +94,7 @@ const DepartmentsPage = () => {
             specialty: "Surgical Oncology",
             education: "MBBS, MS, MCh (Surgical Oncology)",
             experience: "16+ years",
-            bio: "Dr. Kailash is a surgical oncologist with expertise in complex cancer surgeries.",
-            image: "https://images.unsplash.com/photo-1537368910025-700350fe46c7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3"
+            bio: "Dr. Kailash is a surgical oncologist with expertise in complex cancer surgeries."
           },
           { 
             id: 3, 
@@ -108,8 +102,7 @@ const DepartmentsPage = () => {
             specialty: "Laparoscopic Surgery",
             education: "MBBS, MS, FMAS",
             experience: "12+ years",
-            bio: "Dr. Rubul specializes in advanced laparoscopic and robotic surgical techniques.",
-            image: "https://images.unsplash.com/photo-1622902046580-2b47f47f5471?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3"
+            bio: "Dr. Rubul specializes in advanced laparoscopic and robotic surgical techniques."
           },
           { 
             id: 4, 
@@ -117,8 +110,7 @@ const DepartmentsPage = () => {
             specialty: "Gastrointestinal Surgery",
             education: "MBBS, MS, DNB",
             experience: "13+ years",
-            bio: "Dr. John focuses on gastrointestinal surgeries and has pioneered several new techniques in the field.",
-            image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3"
+            bio: "Dr. John focuses on gastrointestinal surgeries and has pioneered several new techniques in the field."
           },
           { 
             id: 5, 
@@ -126,8 +118,7 @@ const DepartmentsPage = () => {
             specialty: "Vascular Surgery",
             education: "MBBS, MS (Surgery), DNB (Vascular Surgery)",
             experience: "9+ years",
-            bio: "Dr. Najim is specialized in vascular and endovascular surgeries.",
-            image: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3"
+            bio: "Dr. Najim is specialized in vascular and endovascular surgeries."
           },
           { 
             id: 6, 
@@ -135,8 +126,7 @@ const DepartmentsPage = () => {
             specialty: "Plastic Surgery",
             education: "MBBS, MS, MCh (Plastic Surgery)",
             experience: "11+ years",
-            bio: "Dr. Ridip is a skilled plastic surgeon specializing in reconstructive procedures.",
-            image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3"
+            bio: "Dr. Ridip is a skilled plastic surgeon specializing in reconstructive procedures."
           }
         ],
         icon: (
@@ -205,7 +195,7 @@ const DepartmentsPage = () => {
         ],
         icon: (
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
-            <path d="M8.5 14.5A2.5 2.5 0 1 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-1.5-4.5 0-8 0 0-2.5 1-2.5 5 0 2 1 3 1 4s-.5 2-2.5 3c-1 .5-1.5 2-1.5 3.5.423-.966 1.405-1.5-2.5-1.5-2.5 0-2.5 2.5-2.5 2.5V20c0 .5-.5 1.5-2.5 1.5S3 19.5 3 17.5c0-1.5.5-3 2-4 1.5-1 2-2 2-2"></path>
+            <path d="M8.5 14.5A2.5 2.5 0 1 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-1.5-4.5 0-8 0 0-2.5 1-2.5 5 0 2 1 3 1 4s-.5 2-2.5 3c-1 .5-1.5 2-1.5 3.5.423-.966 1.405-1.5-2.5-1.5-2.5 0-2.5 2.5-2.5 2.5V20c0 .5-.5 1.5-2.5 1.5S3 19.5 3 17.5c0-1.5.5-3-2-4-1.5-1-2-2-2-2"></path>
             <path d="M15.5 14.5A2.5 2.5 0 1 1 13 12c0-1.38.5-2 1-3 1.072-2.143 1.5-4.5 0-8 0 0 2.5 1 2.5 5 0 2-1 3-1 4s.5 2 2.5 3c1 .5 1.5 2 1.5 3.5-.423-.966-1.405-1.5-2.5-1.5-2.5 0-2.5 2.5-2.5 2.5V20c0 .5.5 1.5 2.5 1.5s2.5-2 2.5-4c0-1.5-.5-3-2-4-1.5-1-2-2-2-2"></path>
           </svg>
         )
@@ -396,20 +386,10 @@ const DepartmentsPage = () => {
                           className="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition-all cursor-pointer"
                           onClick={() => handleDoctorClick(doctor)}
                         >
-                          <div className="h-48 overflow-hidden">
-                            {doctor.image ? (
-                              <img 
-                                src={doctor.image} 
-                                alt={doctor.name} 
-                                className="w-full h-full object-cover transition-transform hover:scale-105"
-                              />
-                            ) : (
-                              <div className="w-full h-full bg-royal/10 flex items-center justify-center text-royal">
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
-                              </div>
-                            )}
+                          <div className="h-48 overflow-hidden bg-royal/5 flex items-center justify-center">
+                            <div className="text-royal/70">
+                              <UserRound size={64} strokeWidth={1.5} />
+                            </div>
                           </div>
                           
                           <CardContent className="p-4">
@@ -455,15 +435,11 @@ const DepartmentsPage = () => {
           </DialogHeader>
           
           <div className="grid gap-4 py-4">
-            {selectedDoctor?.image && (
-              <div className="overflow-hidden rounded-md">
-                <img 
-                  src={selectedDoctor.image} 
-                  alt={selectedDoctor.name} 
-                  className="w-full h-64 object-cover object-center"
-                />
+            <div className="h-48 overflow-hidden bg-royal/5 flex items-center justify-center rounded-md">
+              <div className="text-royal/70">
+                <UserRound size={64} strokeWidth={1.5} />
               </div>
-            )}
+            </div>
             
             <div className="space-y-4">
               {selectedDoctor?.bio && (
