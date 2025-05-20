@@ -7,7 +7,7 @@ import ScrollReveal from '../components/ui/ScrollReveal';
 // Service images
 const serviceImages = {
   emergency: '/IMG_7531.JPEG',
-  opd: '/IMG_7211.JPG',
+  opd: '/IMG_7585.JPG',
   surgery: '/IMG_7537.JPG',
   maternity: '/IMG_7589.JPEG',
   criticalCare: '/IMG_7562.JPG',
