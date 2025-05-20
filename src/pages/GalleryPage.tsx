@@ -200,7 +200,7 @@ const galleryImages: GalleryImage[] = [
 },
 {
   id: 32,
-  src: "IMG_798.JPG",
+  src: "IMG_7298.JPG",
   alt: "Pharmacy",
   category: "Pharmacy"
 },
