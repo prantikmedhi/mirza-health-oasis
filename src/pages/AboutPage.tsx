@@ -37,7 +37,7 @@ const AboutPage = () => {
             <ScrollReveal>
               <div className="relative">
                 <img 
-                  src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1473&q=80" 
+                  src="/IMG_7550.JPEG" 
                   alt="Hospital Building" 
                   className="w-full h-auto rounded-lg shadow-lg"
                 />
