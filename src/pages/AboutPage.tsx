@@ -105,28 +105,7 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* Promoters Section */}
-      <section className="py-16 md:py-24 bg-white">
-        <div className="container mx-auto px-4">
-          <SectionTitle 
-            title="Our Promoters" 
-            subtitle="Meet the experienced leadership team behind our hospital" 
-            center
-          />
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
-            {directors.map((director, index) => (
-              <DirectorCard 
-                key={director.id}
-                name={director.name}
-                position={director.position}
-                image={director.image}
-                details={director.details}
-                delay={index * 200}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
+      
 
       {/* Values */}
       <section className="py-16 md:py-24 bg-white">
