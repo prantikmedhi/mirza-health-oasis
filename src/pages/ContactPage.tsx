@@ -79,7 +79,7 @@ const ContactPage = () => {
                     </div>
                     <div>
                       <h3 className="text-lg font-playfair font-bold text-royal mb-1">Email Address</h3>
-                      <p className="text-gray-600">info@mirzahospital.com</p>
+                      <p className="text-gray-600">mirzamultispecialityhospital@gmail.com</p>
                     </div>
                   </div>
                   
