@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import SectionTitle from '../components/ui/SectionTitle';
 import ScrollReveal from '../components/ui/ScrollReveal';
@@ -10,71 +9,279 @@ interface GalleryImage {
   category: string;
 }
 
+// Replace this with your own images categorized appropriately
 const galleryImages: GalleryImage[] = [
   {
     id: 1,
-    src: "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1473&q=80",
-    alt: "Hospital Building",
-    category: "facilities"
+    src: "IMG_7198.JPG",
+    alt: "Attendent Hall",
+    category: "Attendent hall"
   },
-  {
+   {
     id: 2,
-    src: "https://images.unsplash.com/photo-1516549655169-df83a0774514?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-    alt: "Doctor Examining Patient",
-    category: "staff"
+    src: "IMG_7199.JPG",
+    alt: "Attendent Hall",
+    category: "Attendent hall"
   },
+   {
+   id: 3,
+   src: "IMG_7203.JPG",
+   alt: "Attendent Hall",
+   category: "Attendent hall"
+ },
   {
-    id: 3,
-    src: "https://images.unsplash.com/photo-1504439468489-c8920d796a29?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80",
-    alt: "Hospital Reception",
-    category: "facilities"
-  },
+   id: 4,
+   src: "IMG_7204.JPG",
+   alt: "Attendent Hall",
+   category: "Attendent hall"
+   
+ },
   {
-    id: 4,
-    src: "https://images.unsplash.com/photo-1666214280349-48e12f4a51d0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-    alt: "Doctor Consultation",
-    category: "care"
-  },
+   id: 5,
+   src: "IMG_7205.JPG",
+   alt: "Attendent Hall",
+   category: "Attendent hall"
+ },
   {
-    id: 5,
-    src: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80",
-    alt: "ICU Room",
-    category: "facilities"
-  },
+   id: 6,
+   src: "IMG_7206.JPG",
+   alt: "Attendent Hall",
+   category: "Attendent hall"
+ },
   {
-    id: 6,
-    src: "https://images.unsplash.com/photo-1579154204601-01588f351e67?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-    alt: "Surgery Team",
-    category: "staff"
-  },
+   id: 7,
+   src: "IMG_7207.JPG",
+   alt: "Attendent Hall",
+   category: "Attendent hall"
+ },
   {
-    id: 7,
-    src: "https://images.unsplash.com/photo-1666214277649-7b17c24f47da?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-    alt: "Patient Checkup",
-    category: "care"
-  },
+   id: 8,
+   src: "IMG_7208.JPG",
+   alt: "Attendent Hall",
+   category: "Attendent hall"
+ },
   {
-    id: 8,
-    src: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1468&q=80",
-    alt: "Laboratory Equipment",
-    category: "facilities"
-  },
-  {
-    id: 9,
-    src: "https://images.unsplash.com/photo-1527613426441-4da17471b66d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1452&q=80",
-    alt: "Nursing Staff",
-    category: "staff"
-  }
+   id: 9,
+   src: "IMG_7200.JPG",
+   alt: "Cafe",
+   category: "Cafe"
+ },
+ {
+   id: 10,
+   src: "IMG_7201.JPG",
+   alt: "Cafe",
+   category: "Cafe"
+ },
+ {
+  id: 11,
+  src: "IMG_7202.JPG",
+  alt: "Cafe",
+  category: "Cafe"
+},
+{
+  id: 12,
+  src: "IMG_7238.JPG",
+  alt: "ECG",
+  category: "ECG"
+},
+{
+  id: 13,
+  src: "IMG_7239.JPG",
+  alt: "ECG",
+  category: "ECG"
+},
+{
+  id: 14,
+  src: "IMG_7219.JPG",
+  alt: "Emergency",
+  category: "Emergency"
+},
+{
+  id: 15,
+  src: "IMG_7222.JPG",
+  alt: "Emergency",
+  category: "Emergency"
+},
+{
+  id: 16,
+  src: "IMG_7223.JPG",
+  alt: "Emergency",
+  category: "Emergency"
+},
+{
+  id: 17,
+  src: "IMG_7224.JPG",
+  alt: "Emergency",
+  category: "Emergency"
+}, 
+{
+  id: 18,
+  src: "IMG_7225.JPG",
+  alt: "Emergency",
+  category: "Emergency"
+},
+{
+  id: 19,
+  src: "IMG_7226.JPG",
+  alt: "Emergency",
+  category: "Emergency"
+},
+{
+  id: 20,
+  src: "IMG_7227.JPG",
+  alt: "Emergency",
+  category: "Emergency"
+},
+{
+  id: 21,
+  src: "IMG_7211.JPG",
+  alt: "Opd",
+  category: "Opd"
+},
+{
+  id: 22,
+  src: "IMG_7212.JPG",
+  alt: "Opd",
+  category: "Opd"
+},
+{
+  id: 23,
+  src: "IMG_7213.JPG",
+  alt: "Opd",
+  category: "Opd"
+}, 
+{
+  id: 24,
+  src: "IMG_7214.JPG",
+  alt: "Opd",
+  category: "Opd"
+},
+{
+  id: 25,
+  src: "IMG_7215.JPG",
+  alt: "Opd",
+  category: "Opd"
+},
+{
+  id: 26,
+  src: "IMG_7216.JPG",
+  alt: "Opd",
+  category: "Opd"
+},
+{
+  id: 27,
+  src: "IMG_7217.JPG",
+  alt: "Opd",
+  category: "Opd"
+},
+{
+  id: 28,
+  src: "IMG_7218.JPG",
+  alt: "Opd",
+  category: "Opd"
+},
+{
+  id: 29,
+  src: "IMG_7209.JPG",
+  alt: "Pharmacy",
+  category: "Pharmacy"
+},
+{
+  id: 30,
+  src: "IMG_7296.JPG",
+  alt: "Pharmacy",
+  category: "Pharmacy"
+},
+{
+  id: 31,
+  src: "IMG_7297.JPG",
+  alt: "Pharmacy",
+  category: "Pharmacy"
+},
+{
+  id: 32,
+  src: "IMG_798.JPG",
+  alt: "Pharmacy",
+  category: "Pharmacy"
+},
+{
+  id: 33,
+  src: "IMG_7192.JPG",
+  alt: "Reception",
+  category: "Reciption"
+},
+{
+  id: 34,
+  src: "IMG_7193.JPG",
+  alt: "Reception",
+  category: "Reciption"
+},
+{
+  id: 35,
+  src: "IMG_7294.JPG",
+  alt: "Reception",
+  category: "Reciption"
+},
+{
+  id: 36,
+  src: "IMG_7295.JPG",
+  alt: "Reception",
+  category: "Reciption"
+},
+{
+  id: 34,
+  src: "IMG_7296.JPG",
+  alt: "Reception",
+  category: "Reciption"
+},
+
+{
+  id: 35,
+  src: "IMG_7235.JPG",
+  alt: "Sample collection",
+  category: "Sample collection"
+},
+{
+  id: 36,
+  src: "IMG_7236.JPG",
+  alt: "Sample collection",
+  category: "Sample collection"
+},
+{
+  id: 37,
+  src: "IMG_7237.JPG",
+  alt: "Sample collection",
+  category: "Sample collection"
+},
+{
+  id: 38,
+  src: "IMG_7240.JPG",
+  alt: "Sample collection",
+  category: "Sample collection"
+},
+{
+  id: 39,
+  src: "IMG_7241.JPG",
+  alt: "Sample collection",
+  category: "Sample collection"
+},
+{
+  id: 40,
+  src: "IMG_7242.JPG",
+  alt: "Sample collection",
+  category: "Sample collection"
+}
+
+  
 ];
 
 const GalleryPage = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [lightboxImage, setLightboxImage] = useState<GalleryImage | null>(null);
   const [filteredImages, setFilteredImages] = useState<GalleryImage[]>(galleryImages);
-  
+
   useEffect(() => {
     window.scrollTo(0, 0);
-    
     if (selectedCategory === "all") {
       setFilteredImages(galleryImages);
     } else {
@@ -105,7 +312,7 @@ const GalleryPage = () => {
             </ScrollReveal>
             <ScrollReveal delay={200}>
               <p className="text-xl max-w-3xl mx-auto text-white font-medium">
-                Take a visual tour of our hospital facilities, staff, and patient care
+                Take a visual tour of our hospital's departments and services
               </p>
             </ScrollReveal>
           </div>
@@ -117,107 +324,83 @@ const GalleryPage = () => {
         <div className="container mx-auto px-4">
           <SectionTitle 
             title="Hospital Gallery" 
-            subtitle="Images from our facilities, staff, and patient care" 
+            subtitle="Explore our hospital's facilities and services visually" 
             center
           />
 
           {/* Category Filters */}
           <ScrollReveal>
             <div className="flex justify-center flex-wrap gap-2 mb-12">
-              <button 
-                className={`px-4 py-2 rounded-full transition-colors ${
-                  selectedCategory === 'all' 
-                    ? 'bg-royal text-white shadow-md' 
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                }`}
-                onClick={() => setSelectedCategory('all')}
-              >
-                All
-              </button>
-              <button 
-                className={`px-4 py-2 rounded-full transition-colors ${
-                  selectedCategory === 'facilities' 
-                    ? 'bg-royal text-white shadow-md' 
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                }`}
-                onClick={() => setSelectedCategory('facilities')}
-              >
-                Facilities
-              </button>
-              <button 
-                className={`px-4 py-2 rounded-full transition-colors ${
-                  selectedCategory === 'staff' 
-                    ? 'bg-royal text-white shadow-md' 
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                }`}
-                onClick={() => setSelectedCategory('staff')}
-              >
-                Medical Staff
-              </button>
-              <button 
-                className={`px-4 py-2 rounded-full transition-colors ${
-                  selectedCategory === 'care' 
-                    ? 'bg-royal text-white shadow-md' 
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                }`}
-                onClick={() => setSelectedCategory('care')}
-              >
-                Patient Care
-              </button>
+              {["all", "Attendent hall", "Cafe", "ECG", "Emergency", "Opd", "Pharmacy", "Reception", "Sample collection"].map((category) => (
+                <button 
+                  key={category}
+                  className={`px-4 py-2 rounded-full transition-colors ${
+                    selectedCategory === category 
+                      ? 'bg-royal text-white shadow-md' 
+                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                  }`}
+                  onClick={() => setSelectedCategory(category)}
+                >
+                  {category === "all" ? "All" : category}
+                </button>
+              ))}
             </div>
           </ScrollReveal>
 
-          {/* Gallery Grid - Show only images from selected category */}
-<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-  {filteredImages.map((image, index) => (
-    <ScrollReveal key={image.id} delay={index * 100}>
-      <div 
-        className="overflow-hidden rounded-lg shadow-md cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-lg"
-        onClick={() => openLightbox(image)}
-      >
-        <div className="aspect-w-16 aspect-h-9 relative">
-          <img 
-            src={image.src} 
-            alt={image.alt} 
-            className="object-cover w-full h-64"
-          />
-          <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center">
-            <span className="text-white text-lg font-medium">{image.alt}</span>
+          {/* Gallery Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {filteredImages.map((image, index) => (
+              <ScrollReveal key={image.id} delay={index * 100}>
+                <div 
+                  className="overflow-hidden rounded-lg shadow-md cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-lg"
+                  onClick={() => openLightbox(image)}
+                >
+                  <div className="aspect-w-16 aspect-h-9 relative">
+                    <img 
+                      src={image.src} 
+                      alt={image.alt} 
+                      className="object-cover w-full h-64"
+                    />
+                    <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center">
+                      <span className="text-white text-lg font-medium">{image.alt}</span>
+                    </div>
+                  </div>
+                </div>
+              </ScrollReveal>
+            ))}
           </div>
-        </div>
-      </div>
-    </ScrollReveal>
-  ))}
-</div>
-      {/* Lightbox */}
-      {lightboxImage && (
-        <div 
-          className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4 animate-fade-in"
-          onClick={closeLightbox}
-        >
-          <div 
-            className="relative max-w-4xl max-h-full animate-scale-in"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <img 
-              src={lightboxImage.src} 
-              alt={lightboxImage.alt} 
-              className="max-h-[80vh] max-w-full rounded-lg"
-            />
-            <button 
-              className="absolute -top-4 -right-4 bg-white rounded-full p-2 shadow-lg"
+
+          {/* Lightbox */}
+          {lightboxImage && (
+            <div 
+              className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4 animate-fade-in"
               onClick={closeLightbox}
             >
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-royal" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-            <div className="bg-white p-4 rounded-b-lg">
-              <h3 className="text-xl font-medium text-royal">{lightboxImage.alt}</h3>
+              <div 
+                className="relative max-w-4xl max-h-full animate-scale-in"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <img 
+                  src={lightboxImage.src} 
+                  alt={lightboxImage.alt} 
+                  className="max-h-[80vh] max-w-full rounded-lg"
+                />
+                <button 
+                  className="absolute -top-4 -right-4 bg-white rounded-full p-2 shadow-lg"
+                  onClick={closeLightbox}
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-royal" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+                <div className="bg-white p-4 rounded-b-lg">
+                  <h3 className="text-xl font-medium text-royal">{lightboxImage.alt}</h3>
+                </div>
+              </div>
             </div>
-          </div>
+          )}
         </div>
-      )}
+      </section>
     </div>
   );
 };
