@@ -55,6 +55,10 @@ const ServicesPage = () => {
         ]}
       />
 
+      const serviceImages = {
+  opd: '/IMG_7211.JPG',
+
+
       {/* OPD */}
       <ServiceSection 
         title="Outpatient Department (OPD)"
