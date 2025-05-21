@@ -10,7 +10,7 @@ const Footer = () => {
             <h3 className="text-xl font-dm-serif font-bold mb-4 text-skyblue-light">Mirza Hospital</h3>
             <p className="mb-4">Your Health Is Our Priority</p>
             <p className="text-sm text-gray-200">
-              Tech City, Mirza, Near IITG<br />
+              Tech City, Mirza, Near IIITG<br />
               Bongora, Guwahati<br />
               Assam-781015
             </p>
