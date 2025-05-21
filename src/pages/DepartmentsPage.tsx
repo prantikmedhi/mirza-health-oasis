@@ -184,15 +184,7 @@ const DepartmentsPage = () => {
           { id: 1, name: "Dr. Hriday Haloi" },
           { id: 2, name: "Dr. Kishore Sarma" }
         ],
-        icon: (
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
-            <path d="M15.5 3a2.5 2.5 0 0 1 0 5h-12a2.5 2.5 0 0 1 0-5Z"></path>
-            <path d="M12.5 8v5.5a2.5 2.5 0 0 1-5 0V8"></path>
-            <path d="M5 8v5.5a2.5 2.5 0 0 0 5 0V8"></path>
-            <path d="M15.1 21H9l-4-7h9l-1 7"></path>
-            <path d="m16 11 4.2 7.4A2 2 0 0 1 18.7 21H16v-3"></path>
-          </svg>
-        )
+        
       },
       {
         id: 8,
