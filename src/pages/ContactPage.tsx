@@ -93,7 +93,7 @@ const ContactPage = () => {
                     <div>
                       <h3 className="text-lg font-playfair font-bold text-royal mb-1">Address</h3>
                       <p className="text-gray-600">
-                        Tech City, Mirza, Near IITG<br />
+                        Tech City, Mirza, Near IIITG<br />
                         Bongora, Guwahati<br />
                         Assam-781015
                       </p>
@@ -216,7 +216,7 @@ const ContactPage = () => {
           <ScrollReveal>
             <div className="h-96 rounded-lg shadow-lg overflow-hidden">
               <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14323.58223171298!2d91.6357599!3d26.1805978!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x375a5a287f9e3adb%3A0xb53cc0c93252bb45!2sIIT%20Guwahati%2C%20Guwahati%2C%20Assam!5e0!3m2!1sen!2sin!4v1653412513733!5m2!1sen!2sin" 
+                src="https://www.google.com/maps/embed/v1/place?q=Mirza%20Multispeciality%20Hospital&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8" 
                 width="100%" 
                 height="100%" 
                 style={{ border: 0 }} 
