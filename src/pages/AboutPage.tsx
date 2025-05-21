@@ -183,7 +183,7 @@ const AboutPage = () => {
           <ScrollReveal delay={300}>
             <div className="h-96 rounded-lg shadow-lg overflow-hidden">
               <iframe 
-                src="https://www.google.com/maps/embed?pb=..." 
+                src="https://www.google.com/maps/embed/v1/place?q=Mirza%20Multispeciality%20Hospital&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8" 
                 width="100%" 
                 height="100%" 
                 style={{ border: 0 }} 
