@@ -402,9 +402,12 @@ const DepartmentsPage = () => {
                                 {doctor.specialty}
                               </p>
                             )}
-                            <div className="mt-2 text-sm text-gray-600">
-                              <p>Click for more details</p>
-                            </div>
+
+
+
+
+
+                            
                           </CardContent>
                         </Card>
                       ))}
