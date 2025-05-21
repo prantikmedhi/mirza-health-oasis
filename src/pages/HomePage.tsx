@@ -1,4 +1,3 @@
-
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import ScrollReveal from '../components/ui/ScrollReveal';
@@ -34,10 +33,7 @@ const HomePage = () => {
             </ScrollReveal>
             <ScrollReveal delay={400}>
               <div className="flex flex-wrap gap-4">
-                <Link 
-                  to="/appointment" 
-                  className="btn-primary"
-                >
+                <Link to="/appointment" className="btn-primary">
                   Book Appointment
                 </Link>
                 <Link 
@@ -63,7 +59,6 @@ const HomePage = () => {
                   alt="Mirza Multispeciality Hospital" 
                   className="w-full h-auto rounded-lg shadow-lg"
                 />
-                
               </div>
             </ScrollReveal>
             <div>
@@ -118,26 +113,10 @@ const HomePage = () => {
           />
           
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <DepartmentCard 
-              name="Medicine"
-              count={4}
-              delay={0}
-            />
-            <DepartmentCard 
-              name="General Surgery"
-              count={6}
-              delay={200}
-            />
-            <DepartmentCard 
-              name="Pediatrics"
-              count={3}
-              delay={400}
-            />
-            <DepartmentCard 
-              name="ENT"
-              count={5}
-              delay={600}
-            />
+            <DepartmentCard name="Medicine" count={4} delay={0} />
+            <DepartmentCard name="General Surgery" count={6} delay={200} />
+            <DepartmentCard name="Pediatrics" count={3} delay={400} />
+            <DepartmentCard name="ENT" count={5} delay={600} />
           </div>
           
           <div className="text-center mt-12">
@@ -150,7 +129,7 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Services Preview - Updated for better desktop experience */}
+      {/* Services Preview */}
       <section className="py-20 bg-skyblue-light">
         <div className="container mx-auto px-4">
           <SectionTitle 
@@ -161,25 +140,9 @@ const HomePage = () => {
           />
           
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            <ServiceCard 
-              title="Emergency Service"
-              description="24/7 emergency care for critical medical situations."
-              delay={0}
-            />
-            
-            <ServiceCard 
-              title="OPD"
-              description="Outpatient services with experienced specialists."
-              delay={200}
-            />
-            
-            <ServiceCard 
-              title="Surgery"
-              description="Advanced surgical procedures with precision care."
-              delay={400}
-            />
-            
-            
+            <ServiceCard title="Emergency Service" description="24/7 emergency care for critical medical situations." delay={0} />
+            <ServiceCard title="OPD" description="Outpatient services with experienced specialists." delay={200} />
+            <ServiceCard title="Surgery" description="Advanced surgical procedures with precision care." delay={400} />
           </div>
           
           <div className="text-center mt-12">
@@ -197,8 +160,8 @@ const HomePage = () => {
         <div className="container mx-auto px-4 text-center">
           <ScrollReveal>
             <h2 className="text-3xl md:text-4xl font-dm-serif font-bold mb-4 text-white">
-  Need Medical Assistance?
-</h2>
+              Need Medical Assistance?
+            </h2>
           </ScrollReveal>
           <ScrollReveal delay={200}>
             <p className="text-xl mb-8 max-w-2xl mx-auto">
@@ -207,16 +170,10 @@ const HomePage = () => {
           </ScrollReveal>
           <ScrollReveal delay={400}>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link 
-                to="/appointment" 
-                className="bg-skyblue text-white hover:bg-skyblue-medium transition-colors duration-300 py-3 px-8 rounded-md font-medium text-lg"
-              >
+              <Link to="/appointment" className="bg-skyblue text-white hover:bg-skyblue-medium transition-colors duration-300 py-3 px-8 rounded-md font-medium text-lg">
                 Book Appointment
               </Link>
-              <a 
-                href="tel:+918011673568" 
-                className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-teal transition-colors duration-300 py-3 px-8 rounded-md font-medium text-lg"
-              >
+              <a href="tel:+918011673568" className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-teal transition-colors duration-300 py-3 px-8 rounded-md font-medium text-lg">
                 Call Emergency: +91 8011673568
               </a>
             </div>
@@ -240,10 +197,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, delay = 0
         <CardContent className="p-6">
           <h3 className="text-xl font-dm-serif font-bold text-teal mb-3">{title}</h3>
           <p className="text-charcoal mb-4">{description}</p>
-          <Link 
-            to="/services" 
-            className="inline-flex items-center text-teal hover:text-skyblue-medium transition-colors duration-300 font-medium"
-          >
+          <Link to="/services" className="inline-flex items-center text-teal hover:text-skyblue-medium transition-colors duration-300 font-medium">
             Learn More
             <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -268,7 +222,7 @@ const DepartmentCard: React.FC<DepartmentCardProps> = ({ name, count, delay = 0 
         <h3 className="text-xl font-dm-serif font-bold text-teal mb-2">{name}</h3>
         <p className="text-charcoal mb-3">{count} Specialists</p>
         <Link 
-          to="/departments" 
+          to={`/departments?name=${encodeURIComponent(name)}`}
           className="inline-flex items-center text-teal hover:text-skyblue-medium transition-colors duration-300 font-medium"
         >
           View Doctors
