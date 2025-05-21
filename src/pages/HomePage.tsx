@@ -134,8 +134,8 @@ const HomePage = () => {
               delay={400}
             />
             <DepartmentCard 
-              name="Obstetrics & Gynaecology"
-              count={7}
+              name="ENT"
+              count={5}
               delay={600}
             />
           </div>
