@@ -179,23 +179,7 @@ const HomePage = () => {
               delay={400}
             />
             
-            <ServiceCard 
-              title="Maternity"
-              description="Complete maternal care before, during and after childbirth."
-              delay={600}
-            />
             
-            <ServiceCard 
-              title="Critical Care"
-              description="Intensive care unit with advanced life support systems."
-              delay={800}
-            />
-            
-            <ServiceCard 
-              title="Diabetology"
-              description="Specialized care for diabetes management and treatment."
-              delay={1000}
-            />
           </div>
           
           <div className="text-center mt-12">
