@@ -130,11 +130,7 @@ const DepartmentsPage = () => {
             bio: "Dr. Ridip is a skilled plastic surgeon specializing in reconstructive procedures."
           }
         ],
-        icon: (
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
-            <path d="M13 12H7m5-4l-5 8m7-8l5 8m-5-8v8"></path>
-          </svg>
-        )
+        
       },
       {
         id: 3,
@@ -144,12 +140,7 @@ const DepartmentsPage = () => {
           { id: 2, name: "Dr. Pankaj Nath" },
           { id: 3, name: "Dr. Jadumoni Kataki" }
         ],
-        icon: (
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
-            <path d="M12 2a8 8 0 1 0 0 16 8 8 0 0 0 0-16Z"></path>
-            <path d="M12 6v4l3 3"></path>
-          </svg>
-        )
+        
       },
       {
         id: 4,
@@ -163,12 +154,7 @@ const DepartmentsPage = () => {
           { id: 6, name: "Dr. Manisha Paul" },
           { id: 7, name: "Dr. Hiranya Kr. Baishya" }
         ],
-        icon: (
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
-            <path d="M12 2a8 8 0 1 0 0 16 8 8 0 0 0 0-16Z"></path>
-            <path d="M12 6v4l3 3"></path>
-          </svg>
-        )
+        
       },
       {
         id: 5,
@@ -177,12 +163,7 @@ const DepartmentsPage = () => {
           { id: 1, name: "Dr. Debangya Sarma" },
           { id: 2, name: "Dr. Sovik Dey" }
         ],
-        icon: (
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
-            <path d="M9.17 16.83a4 4 0 1 0 5.66 0m-5.66 0A5.99 5.99 0 0 1 10 12v-2a2 2 0 1 1 4 0v2c0 1.82.82 3.44 2.12 4.52"></path>
-            <path d="M10 12H8m8 0h-2"></path>
-          </svg>
-        )
+        
       },
       {
         id: 6,
@@ -194,12 +175,7 @@ const DepartmentsPage = () => {
           { id: 4, name: "Dr. Neelkamal Kalita" },
           { id: 5, name: "Dr. Bishal Deka" }
         ],
-        icon: (
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
-            <path d="M8.5 14.5A2.5 2.5 0 1 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-1.5-4.5 0-8 0 0-2.5 1-2.5 5 0 2 1 3 1 4s-.5 2-2.5 3c-1 .5-1.5 2-1.5 3.5.423-.966 1.405-1.5-2.5-1.5-2.5 0-2.5 2.5-2.5 2.5V20c0 .5-.5 1.5-2.5 1.5S3 19.5 3 17.5c0-1.5.5-3-2-4-1.5-1-2-2-2-2"></path>
-            <path d="M15.5 14.5A2.5 2.5 0 1 1 13 12c0-1.38.5-2 1-3 1.072-2.143 1.5-4.5 0-8 0 0 2.5 1 2.5 5 0 2-1 3-1 4s.5 2 2.5 3c1 .5 1.5 2 1.5 3.5-.423-.966-1.405-1.5-2.5-1.5-2.5 0-2.5 2.5-2.5 2.5V20c0 .5.5 1.5 2.5 1.5s2.5-2 2.5-4c0-1.5-.5-3-2-4-1.5-1-2-2-2-2"></path>
-          </svg>
-        )
+        
       },
       {
         id: 7,
@@ -224,12 +200,7 @@ const DepartmentsPage = () => {
         doctors: [
           { id: 1, name: "Dr. Anupam Das" }
         ],
-        icon: (
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
-            <path d="M9.17 16.83a4 4 0 1 0 5.66 0m-5.66 0A5.99 5.99 0 0 1 10 12v-2a2 2 0 1 1 4 0v2c0 1.82.82 3.44 2.12 4.52"></path>
-            <path d="M10 12H8m8 0h-2"></path>
-          </svg>
-        )
+        
       },
       {
         id: 9,
@@ -241,12 +212,7 @@ const DepartmentsPage = () => {
           { id: 4, name: "Dr. Tapan Sarma" },
           { id: 5, name: "Dr. Rajkumar Mahanta" }
         ],
-        icon: (
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
-            <path d="m2 12 8 8 12-12"></path>
-            <path d="m2 12 8-8 12 12"></path>
-          </svg>
-        )
+        
       },
       {
         id: 10,
@@ -256,12 +222,7 @@ const DepartmentsPage = () => {
           { id: 2, name: "Dr. Shabana Choudhury" },
           { id: 3, name: "Dr. Prajyaklira Sarma" }
         ],
-        icon: (
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
-            <path d="M5 5a5 5 0 0 1 7 0 5 5 0 0 0 7 0v9a5 5 0 0 1-7 0 5 5 0 0 0-7 0Z"></path>
-            <path d="M5 5v14"></path>
-          </svg>
-        )
+        
       },
       {
         id: 11,
@@ -269,11 +230,7 @@ const DepartmentsPage = () => {
         doctors: [
           { id: 1, name: "Dr. Kailash Thakuria" }
         ],
-        icon: (
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
-            <path d="M13 12H7m5-4l-5 8m7-8l5 8m-5-8v8"></path>
-          </svg>
-        )
+        
       },
       {
         id: 12,
@@ -281,13 +238,7 @@ const DepartmentsPage = () => {
         doctors: [
           { id: 1, name: "Dr. Mukib Akhtar Hussain" }
         ],
-        icon: (
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
-            <path d="M15.42 18.61A2.4 2.4 0 1 0 19.5 17m-3.94 1.54-.82 2.1m.1-2.45-1.13-11.8m5.7 12.44A2.4 2.4 0 1 0 24 16.6m-4.58 2.03.7 1.86m-.9-2.23L17.1 6.47"></path>
-            <path d="M5.75 13.4h2.5v2.2h-2.5z"></path>
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.34 10.55H5.45l-4.6-6.55h12.7l-4.6 6.55H5.76"></path>
-          </svg>
-        )
+        
       },
       {
         id: 13,
@@ -298,12 +249,7 @@ const DepartmentsPage = () => {
           { id: 3, name: "Dr. Pranab Rabha" },
           { id: 4, name: "Dr. Amal Choudhury" }
         ],
-        icon: (
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
-            <path d="M9.17 16.83a4 4 0 1 0 5.66 0m-5.66 0A5.99 5.99 0 0 1 10 12v-2a2 2 0 1 1 4 0v2c0 1.82.82 3.44 2.12 4.52"></path>
-            <path d="M10 12H8m8 0h-2"></path>
-          </svg>
-        )
+        
       }
     ]);
   }, []);
