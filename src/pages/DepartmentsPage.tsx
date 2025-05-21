@@ -28,11 +28,16 @@ const DepartmentsPage = () => {
   const [departments, setDepartments] = useState<Department[]>([]);
   const [selectedDoctor, setSelectedDoctor] = useState<Doctor | null>(null);
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
+  const location = useLocation();
+
+useEffect(() => {
+  window.scrollTo(0, 0);
+
+  const departmentsData: Department[] = [
+  
     
     // Set departments data with enhanced doctor information
-    setDepartments([
+  
       {
         id: 1,
         name: "Medicine",
@@ -305,8 +310,20 @@ const DepartmentsPage = () => {
           </svg>
         )
       }
-    ]);
-  }, []);
+    setDepartments(departmentsData);
+
+  // Get department name from URL and activate that tab
+  const params = new URLSearchParams(location.search);
+  const deptName = params.get("name");
+
+  if (deptName) {
+    const matching = departmentsData.find((d) => d.name.toLowerCase() === deptName.toLowerCase());
+    if (matching) {
+      setActiveTab(matching.id);
+    }
+  }
+}, [location.search]);
+
 
   const handleDoctorClick = (doctor: Doctor) => {
     setSelectedDoctor(doctor);
