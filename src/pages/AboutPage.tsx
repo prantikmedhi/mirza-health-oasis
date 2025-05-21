@@ -160,7 +160,7 @@ const AboutPage = () => {
               <div className="mb-6">
                 <h4 className="font-bold text-royal mb-2">Address:</h4>
                 <p className="text-gray-600">
-                  Tech City, Mirza, Near IITG<br />
+                  Tech City, Mirza, Near IIITG<br />
                   Bongora, Guwahati<br />
                   Assam-781015
                 </p>
