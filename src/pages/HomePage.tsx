@@ -63,10 +63,7 @@ const HomePage = () => {
                   alt="Mirza Multispeciality Hospital" 
                   className="w-full h-auto rounded-lg shadow-lg"
                 />
-                <div className="absolute -bottom-6 -right-6 bg-teal text-white p-6 rounded-lg shadow-lg hidden md:block">
-                  <p className="text-2xl font-dm-serif font-bold">20+</p>
-                  <p className="text-sm">Years of Experience</p>
-                </div>
+                
               </div>
             </ScrollReveal>
             <div>
@@ -76,7 +73,7 @@ const HomePage = () => {
               />
               <ScrollReveal delay={200}>
                 <p className="text-charcoal mb-6">
-                  Mirza Multispeciality Hospital is committed to providing quality, affordable healthcare with compassion to all patients. Located in the heart of Guwahati, our state-of-the-art facility combines cutting-edge technology with experienced medical professionals.
+                  Mirza Multispeciality Hospital is dedicated to delivering high-quality, affordable healthcare with compassion. Located in Tech City near IIIT Guwahati, our state-of-the-art facility serves South Kamrup, combining advanced medical technology with skilled professionals to ensure exceptional patient care.
                 </p>
               </ScrollReveal>
               <ScrollReveal delay={400}>
