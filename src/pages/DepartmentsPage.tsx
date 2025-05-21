@@ -70,12 +70,12 @@ const DepartmentsPage = () => {
             bio: "Dr. Annu specializes in medical management of various cancer treatments."
           }
         ],
-        icon: (
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
-            <path d="M19 15V9c0-1.7-1.3-3-3-3h-8L3 12v6c0 1.7 1.3 3 3 3h11c1.7 0 3-1.3 3-3M9 9h.01M15 9h.01"></path>
-            <path d="M9 12h6"></path>
-          </svg>
-        )
+
+
+
+
+
+        
       },
       {
         id: 2,
