@@ -394,7 +394,7 @@ Simple. Fast. Easy.     </p>
                           <option value="">Select Gender</option>
                           <option value="male">Male</option>
                           <option value="female">Female</option>
-                          <option value="other">Other</option>
+                          
                         </select>
                       </div>
 
@@ -646,7 +646,7 @@ Simple. Fast. Easy.     </p>
                     Appointment Request Submitted!
                   </h2>
                   <p className="text-gray-600 mb-6">
-                    Your appointment request has been successfully submitted. Our team will contact you shortly to confirm your appointment.
+                    Your appointment request has been successfully submitted. We will contact you shortly to confirm your appointment.
                   </p>
 
                   <div className="border-t border-gray-200 pt-6 mb-6 text-left">
@@ -664,10 +664,7 @@ Simple. Fast. Easy.     </p>
                         <p className="text-sm text-gray-500">Contact Number</p>
                         <p className="font-medium">{formData.mobileNumber}</p>
                       </div>
-                      <div>
-                        <p className="text-sm text-gray-500">Email</p>
-                        <p className="font-medium">{formData.email || 'Not provided'}</p>
-                      </div>
+                      
                     </div>
                   </div>
 
