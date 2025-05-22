@@ -56,7 +56,7 @@ interface FormData {
   state: string;
   country: string;
   pincode: string;
-  phoneNumber: string;
+  contactNumber: string;
   mobileNumber: string;
   email: string;
   department: string;
@@ -79,7 +79,7 @@ const AppointmentPage = () => {
     state: '',
     country: '',
     pincode: '',
-    phoneNumber: '',
+    contactNumber: '',
     mobileNumber: '',
     email: '',
     department: ''
@@ -114,7 +114,7 @@ const AppointmentPage = () => {
   const validateForm = (): boolean => {
     const requiredFields = [
       'name', 'fathersName', 'dob', 'age', 'gender', 'nationality', 'maritalStatus',
-      'address', 'city', 'state', 'country', 'pincode', 'phoneNumber', 'mobileNumber',
+      'address', 'city', 'state', 'country', 'pincode', 'contactNumber', 
       'department'
     ];
 
@@ -135,15 +135,11 @@ const AppointmentPage = () => {
       return false;
     }
 
-    if (!/^\d{10,15}$/.test(formData.phoneNumber.replace(/[^\d]/g, ''))) {
-      toast.error("Please enter a valid phone number");
-      return false;
-    }
+    if (!/^\d{10,15}$/.test(formData.contactNumber.replace(/[^\d]/g, ''))) {
+  toast.error("Please enter a valid contact number");
+}
 
-    if (!/^\d{10,15}$/.test(formData.mobileNumber.replace(/[^\d]/g, ''))) {
-      toast.error("Please enter a valid mobile number");
-      return false;
-    }
+    
 
     return true;
   };
@@ -499,7 +495,7 @@ Simple. Fast. Easy.     </p>
                           type="tel"
                           name="conatctNumber"
                           className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#197C6E]"
-                          value={formData.phoneNumber}
+                          value={formData.contactNumber}
                           onChange={handleChange}
                           required
                           disabled={isSubmitting}
