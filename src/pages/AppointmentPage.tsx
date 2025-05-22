@@ -4,8 +4,6 @@ import { toast } from 'sonner';
 import SectionTitle from '../components/ui/SectionTitle';
 import ScrollReveal from '../components/ui/ScrollReveal';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import CrmDashboard from '../components/crm/CrmDashboard';
-
 interface Doctor {
   id: number;
   name: string;
@@ -184,9 +182,7 @@ const AppointmentPage = () => {
     mobileNumber: '',
     email: '',
     department: '',
-    doctor: '',
-    date: '',
-    time: ''
+    doctor: ''
   });
   const [availableDoctors, setAvailableDoctors] = useState<Doctor[]>([]);
   const [activeView, setActiveView] = useState<'book' | 'admin'>('book');
@@ -225,19 +221,48 @@ const AppointmentPage = () => {
     }
   }, [formData.department]);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
+  const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  const requiredFields = [
+    'name', 'fathersName', 'dob', 'age', 'gender', 'nationality', 'maritalStatus',
+    'address', 'city', 'state', 'country', 'pincode', 'phoneNumber', 'mobileNumber',
+    'department', 'doctor'
+  ];
+
+  const missingFields = requiredFields.filter(field => !formData[field as keyof typeof formData]);
+  if (missingFields.length > 0) {
+    toast.error(`Please fill in all required fields: ${missingFields.join(', ')}`);
+    return;
+  }
+
+  if (formData.nationality !== 'India' && !formData.passportNumber) {
+    toast.error("Passport number is required for foreign nationals");
+    return;
+  }
+
+  try {
+    const response = await fetch("https://script.google.com/macros/s/AKfycbyeKx60rcTYEgEWnwZM3LbdlszRYWsdt46PeUJKyQacTcV7u1cQpSffDCbFfT59Wjxn/exec", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
+
+    if (response.ok) {
+      setStep(2);
+    } else {
+      toast.error("Failed to submit appointment. Try again.");
+    }
+  } catch (error) {
+    toast.error("An error occurred. Please try again.");
+  }
+};
 
     // Check required fields
     const requiredFields = [
       'name', 'fathersName', 'dob', 'age', 'gender', 'nationality', 'maritalStatus',
       'address', 'city', 'state', 'country', 'pincode', 'phoneNumber', 'mobileNumber',
-      'department', 'doctor', 'date', 'time'
+      'department', 'doctor'
     ];
     
     const missingFields = requiredFields.filter(field => !formData[field as keyof typeof formData]);
@@ -305,10 +330,9 @@ const AppointmentPage = () => {
             }} 
             className="mb-8"
           >
-            <TabsList className="grid w-full max-w-md mx-auto grid-cols-2">
-              <TabsTrigger value="book">Book Appointment</TabsTrigger>
-              <TabsTrigger value="admin">Admin Dashboard</TabsTrigger>
-            </TabsList>
+            <TabsList className="w-full max-w-md mx-auto">
+  <TabsTrigger value="book">Book Appointment</TabsTrigger>
+</TabsList>
             
             <TabsContent value="book">
               <div className="mb-10">
