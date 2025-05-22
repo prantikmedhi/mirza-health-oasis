@@ -65,7 +65,6 @@ const ContactPage = () => {
                     </div>
                     <div>
                       <h3 className="text-lg font-playfair font-bold text-royal mb-1">Phone Numbers</h3>
-                      <p className="text-gray-600">+91 8011673568</p>
                       <p className="text-gray-600">+91 8011260929</p>
                     </div>
                   </div>
@@ -111,8 +110,7 @@ const ContactPage = () => {
                       <h3 className="text-lg font-playfair font-bold text-royal mb-1">Hours of Operation</h3>
                       <p className="text-gray-600">
                         Emergency Services: 24/7<br />
-                        OPD: 9:00 AM - 5:00 PM (Monday - Saturday)
-                      </p>
+                        </p>
                     </div>
                   </div>
                 </div>
