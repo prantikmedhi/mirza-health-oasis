@@ -123,21 +123,20 @@ const ServicesPage = () => {
       />
 
       {/* Diabetology */}
-      <ServiceSection 
-        title="Diabetology"
-        description="Our diabetology department specializes in the diagnosis, treatment, and management of diabetes and related conditions. We provide comprehensive diabetes care, including education, dietary counseling, and regular monitoring to help patients manage their condition effectively."
-        imageSrc={serviceImages.diabetology}
-        imageAlt="Diabetology Department"
-        reverse={true}
-        features={[
-          "Diabetes diagnosis and monitoring",
-          "Blood glucose management",
-          "Dietary counseling",
-          "Insulin therapy management",
-          "Diabetic foot care",
-        ]}
-      />
-
+<ServiceSection 
+  title="Diabetology"
+  description="This department will be available soon with full professional diabetes care services."
+  imageSrc={serviceImages.diabetology}
+  imageAlt="Diabetology Department"
+  reverse={true}
+  features={[
+    "Coming Soon",
+    "Stay tuned for expert diabetes care",
+    "Specialized treatment plans",
+    "Dedicated diabetes support team",
+    "Advanced monitoring facilities",
+  ]}
+/>
       {/* CTA - improved with luxury styling */}
       <section className="py-16 bg-teal text-white">
         <div className="container mx-auto px-4 text-center">
