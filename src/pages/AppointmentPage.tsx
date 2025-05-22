@@ -438,19 +438,17 @@ Simple. Fast. Easy.     </p>
                           Marital Status*
                         </label>
                         <select
-                          name="maritalStatus"
-                          className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#197C6E]"
-                          value={formData.maritalStatus}
-                          onChange={handleChange}
-                          required
-                          disabled={isSubmitting}
-                        >
-                          <option value="">Select Status</option>
-                          <option value="single">Single</option>
-                          <option value="married">Married</option>
-                          <option value="divorced">Divorced</option>
-                          <option value="widowed">Widowed</option>
-                        </select>
+  name="maritalStatus"
+  className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#197C6E]"
+  value={formData.maritalStatus}
+  onChange={handleChange}
+  required
+  disabled={isSubmitting}
+>
+  <option value="">Select Status</option>
+  <option value="single">Single</option>
+  <option value="married">Married</option>
+</select>
                       </div>
 
                       {/* Contact Information */}
