@@ -199,9 +199,9 @@ const AboutPage = () => {
       {/* CTA */}
       <section className="py-16 bg-royal text-white text-center">
         <ScrollReveal>
-          <h2 className="text-3xl md:text-4xl font-playfair font-bold mb-4">
-            Ready to Experience Our Quality Care?
-          </h2>
+          <h2 className="text-3xl md:text-4xl font-playfair font-bold mb-4 text-white">
+  Ready to Experience Our Quality Care?
+</h2>
         </ScrollReveal>
         <ScrollReveal delay={200}>
           <p className="text-xl mb-8 max-w-2xl mx-auto font-medium">
@@ -212,7 +212,7 @@ const AboutPage = () => {
           <div className="flex flex-wrap justify-center gap-4">
             <Link 
               to="/appointment" 
-              className="bg-grin text-royal hover:bg-gold-light transition-colors duration-300 py-3 px-8 rounded-md font-medium text-lg"
+              className="bg-grin text-white hover:bg-royal transition-colors duration-300 py-3 px-8 rounded-md font-medium text-lg"
             >
               Book Appointment
             </Link>
