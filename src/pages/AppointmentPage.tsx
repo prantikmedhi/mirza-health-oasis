@@ -48,16 +48,13 @@ interface FormData {
   dob: string;
   age: string;
   gender: string;
-  nationality: string;
   maritalStatus: string;
   passportNumber: string;
   address: string;
   city: string;
   state: string;
-  country: string;
   pincode: string;
   contactNumber: string;
-  mobileNumber: string;
   email: string;
   department: string;
 }
@@ -71,16 +68,12 @@ const AppointmentPage = () => {
     dob: '',
     age: '',
     gender: '',
-    nationality: '',
     maritalStatus: '',
-    passportNumber: '',
     address: '',
     city: '',
     state: '',
-    country: '',
     pincode: '',
     contactNumber: '',
-    mobileNumber: '',
     email: '',
     department: ''
   });
@@ -113,8 +106,8 @@ const AppointmentPage = () => {
 
   const validateForm = (): boolean => {
     const requiredFields = [
-      'name', 'fathersName', 'dob', 'age', 'gender', 'nationality', 'maritalStatus',
-      'address', 'city', 'state', 'country', 'pincode', 'contactNumber', 
+      'name', 'fathersName', 'dob', 'age', 'gender',  'maritalStatus',
+      'address', 'city', 'state', 'pincode', 'contactNumber', 
       'department'
     ];
 
@@ -125,10 +118,7 @@ const AppointmentPage = () => {
       return false;
     }
 
-    if (formData.nationality !== 'India' && !formData.passportNumber) {
-      toast.error("Passport number is required for foreign nationals");
-      return false;
-    }
+    
 
     if (formData.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
       toast.error("Please enter a valid email address");
@@ -163,13 +153,11 @@ const AppointmentPage = () => {
       submitData.append('Date of Birth', formData.dob);
       submitData.append('Age', formData.age);
       submitData.append('Gender', formData.gender);
-      submitData.append('Nationality', formData.nationality);
       submitData.append('Passport Number', formData.passportNumber || '');
       submitData.append('Marital Status', formData.maritalStatus);
       submitData.append('Address', formData.address);
       submitData.append('City', formData.city);
       submitData.append('State', formData.state);
-      submitData.append('Country', formData.country);
       submitData.append('Pincode', formData.pincode);
       submitData.append('Contact Number', formData.contactNumber);
       submitData.append('Mobile Number', formData.mobileNumber);
@@ -201,13 +189,10 @@ const AppointmentPage = () => {
         params.append('Date of Birth', formData.dob);
         params.append('Age', formData.age);
         params.append('Gender', formData.gender);
-        params.append('Nationality', formData.nationality);
-        params.append('Passport Number', formData.passportNumber || '');
         params.append('Marital Status', formData.maritalStatus);
         params.append('Address', formData.address);
         params.append('City', formData.city);
         params.append('State', formData.state);
-        params.append('Country', formData.country);
         params.append('Pincode', formData.pincode);
         params.append('Contact Number', formdata.contactNumber);
         params.append('Mobile Number', formData.mobileNumber);
@@ -244,13 +229,11 @@ const AppointmentPage = () => {
       dob: '',
       age: '',
       gender: '',
-      nationality: '',
       maritalStatus: '',
       passportNumber: '',
       address: '',
       city: '',
       state: '',
-      country: '',
       pincode: '',
       contactNumber: '',
       mobileNumber: '',
