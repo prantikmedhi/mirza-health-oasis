@@ -485,9 +485,8 @@ Simple. Fast. Easy.     </p>
                           disabled={isSubmitting}
                         />
                       </div>
-
-                      {formData.nationality === 'India' && (
-  <div>
+                      
+                      <div>
     <label className="block text-gray-700 text-sm font-medium mb-2">
       State*
     </label>
@@ -505,22 +504,9 @@ Simple. Fast. Easy.     </p>
       ))}
     </select>
   </div>
-)}
 
-                      <div>
-                        <label className="block text-gray-700 text-sm font-medium mb-2">
-                          Country*
-                        </label>
-                        <input
-                          type="text"
-                          name="country"
-                          className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#197C6E]"
-                          value={formData.country}
-                          onChange={handleChange}
-                          required
-                          disabled={isSubmitting}
-                        />
-                      </div>
+
+                      
 
                       <div>
                         <label className="block text-gray-700 text-sm font-medium mb-2">
@@ -539,11 +525,11 @@ Simple. Fast. Easy.     </p>
 
                       <div>
                         <label className="block text-gray-700 text-sm font-medium mb-2">
-                          Phone Number*
+                          Contact Number*
                         </label>
                         <input
                           type="tel"
-                          name="phoneNumber"
+                          name="conatctNumber"
                           className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#197C6E]"
                           value={formData.phoneNumber}
                           onChange={handleChange}
@@ -552,20 +538,7 @@ Simple. Fast. Easy.     </p>
                         />
                       </div>
 
-                      <div>
-                        <label className="block text-gray-700 text-sm font-medium mb-2">
-                          Mobile Number*
-                        </label>
-                        <input
-                          type="tel"
-                          name="mobileNumber"
-                          className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#197C6E]"
-                          value={formData.mobileNumber}
-                          onChange={handleChange}
-                          required
-                          disabled={isSubmitting}
-                        />
-                      </div>
+                      
 
                       <div>
                         <label className="block text-gray-700 text-sm font-medium mb-2">
