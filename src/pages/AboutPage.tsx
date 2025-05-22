@@ -170,7 +170,7 @@ const AboutPage = () => {
               <div className="mb-6">
                 <h4 className="font-bold text-royal mb-2">Contact Numbers:</h4>
                 <p className="text-gray-600">
-                  +91 8011673568 / +91 8011260929
+                  +91 8011260929
                 </p>
               </div>
             </ScrollReveal>
