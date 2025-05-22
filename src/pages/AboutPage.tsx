@@ -212,7 +212,7 @@ const AboutPage = () => {
           <div className="flex flex-wrap justify-center gap-4">
             <Link 
               to="/appointment" 
-              className="bg-gold text-royal hover:bg-gold-light transition-colors duration-300 py-3 px-8 rounded-md font-medium text-lg"
+              className="bg-grin text-royal hover:bg-gold-light transition-colors duration-300 py-3 px-8 rounded-md font-medium text-lg"
             >
               Book Appointment
             </Link>
