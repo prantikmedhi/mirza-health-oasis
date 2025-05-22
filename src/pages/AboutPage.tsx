@@ -115,14 +115,14 @@ const AboutPage = () => {
               <div className="bg-white p-8 rounded-lg shadow-md">
                 <div className="w-16 h-16 bg-royal rounded-full flex items-center justify-center mb-6 text-white">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5..." />
-                  </svg>
+  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.5C7.305 4.5 3.34 7.607 2 12c1.34 4.393 5.305 7.5 10 7.5s8.66-3.107 10-7.5C20.66 7.607 16.695 4.5 12 4.5z" />
+  <circle cx="12" cy="12" r="3" stroke="currentColor" strokeWidth="2" fill="none"/>
+</svg>
                 </div>
                 <h3 className="text-2xl font-playfair font-bold text-royal mb-4">Our Vision</h3>
                 <p className="text-gray-600">
-                  To be the premier healthcare provider...
-                </p>
+  To be the most trusted and advanced multispeciality hospital in South Kamrup, setting benchmarks in clinical excellence and patient-centric care through innovation, compassion, and commitment.
+</p>
               </div>
             </ScrollReveal>
             {/* Mission */}
@@ -130,13 +130,13 @@ const AboutPage = () => {
               <div className="bg-white p-8 rounded-lg shadow-md">
                 <div className="w-16 h-16 bg-gold rounded-full flex items-center justify-center mb-6 text-royal">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2..." />
-                  </svg>
+  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6l4 2m6-2a10 10 0 11-20 0 10 10 0 0120 0z" />
+</svg>
                 </div>
                 <h3 className="text-2xl font-playfair font-bold text-royal mb-4">Our Mission</h3>
                 <p className="text-gray-600">
-                  To deliver accessible, affordable...
-                </p>
+  To provide high-quality, affordable, and accessible healthcare with a team of skilled professionals using modern medical technology—ensuring a healing experience marked by empathy, dignity, and excellence.
+</p>
               </div>
             </ScrollReveal>
           </div>
