@@ -489,19 +489,23 @@ Simple. Fast. Easy.     </p>
                       </div>
 
                       <div>
-                        <label className="block text-gray-700 text-sm font-medium mb-2">
-                          State*
-                        </label>
-                        <input
-                          type="text"
-                          name="state"
-                          className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#197C6E]"
-                          value={formData.state}
-                          onChange={handleChange}
-                          required
-                          disabled={isSubmitting}
-                        />
-                      </div>
+  <label className="block text-gray-700 text-sm font-medium mb-2">
+    State*
+  </label>
+  <select
+    name="state"
+    className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#197C6E]"
+    value={formData.state}
+    onChange={handleChange}
+    required
+    disabled={isSubmitting}
+  >
+    <option value="">Select State</option>
+    {indianStates.map((state, index) => (
+      <option key={index} value={state}>{state}</option>
+    ))}
+  </select>
+</div>
 
                       <div>
                         <label className="block text-gray-700 text-sm font-medium mb-2">
