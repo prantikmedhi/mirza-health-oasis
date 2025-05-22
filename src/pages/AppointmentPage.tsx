@@ -175,7 +175,7 @@ const AppointmentPage = () => {
       submitData.append('State', formData.state);
       submitData.append('Country', formData.country);
       submitData.append('Pincode', formData.pincode);
-      submitData.append('Phone Number', formData.phoneNumber);
+      submitData.append('Contact Number', formData.contactNumber);
       submitData.append('Mobile Number', formData.mobileNumber);
       submitData.append('Email', formData.email || '');
       submitData.append('Department', formData.department);
@@ -213,7 +213,7 @@ const AppointmentPage = () => {
         params.append('State', formData.state);
         params.append('Country', formData.country);
         params.append('Pincode', formData.pincode);
-        params.append('Phone Number', formData.phoneNumber);
+        params.append('Contact Number', formdata.contactNumber);
         params.append('Mobile Number', formData.mobileNumber);
         params.append('Email', formData.email || '');
         params.append('Department', formData.department);
@@ -256,7 +256,7 @@ const AppointmentPage = () => {
       state: '',
       country: '',
       pincode: '',
-      phoneNumber: '',
+      contactNumber: '',
       mobileNumber: '',
       email: '',
       department: ''
@@ -398,41 +398,9 @@ Simple. Fast. Easy.     </p>
                         </select>
                       </div>
 
-                      <div>
-                        <label className="block text-gray-700 text-sm font-medium mb-2">
-                          Nationality*
-                        </label>
-                        <select
-                          name="nationality"
-                          className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#197C6E]"
-                          value={formData.nationality}
-                          onChange={handleChange}
-                          required
-                          disabled={isSubmitting}
-                        >
-                          <option value="">Select Nationality</option>
-                          <option value="India">India</option>
-                          <option value="Other">Other</option>
-                        </select>
-                      </div>
+                      
 
-                      {formData.nationality === 'Other' && (
-                        <div>
-                          <label className="block text-gray-700 text-sm font-medium mb-2">
-                            Passport Number*
-                          </label>
-                          <input
-                            type="text"
-                            name="passportNumber"
-                            className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#197C6E]"
-                            value={formData.passportNumber}
-                            onChange={handleChange}
-                            required={formData.nationality === 'Other'}
-                            disabled={isSubmitting}
-                          />
-                        </div>
-                      )}
-
+                      
                       <div>
                         <label className="block text-gray-700 text-sm font-medium mb-2">
                           Marital Status*
