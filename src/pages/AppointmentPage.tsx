@@ -258,14 +258,15 @@ const AppointmentPage = () => {
         <div className="container mx-auto px-4">
           <div className="text-center text-white">
             <ScrollReveal>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-playfair font-bold mb-4">
-                Book an Appointment
-              </h1>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-playfair font-bold mb-4 text-white">
+  Book Today for Tomorrow!
+</h1>
             </ScrollReveal>
             <ScrollReveal delay={200}>
               <p className="text-xl max-w-3xl mx-auto">
-                Fill in your details to book an appointment with our specialists
-              </p>
+                
+No need to wait in line. Just book online and visit the hospital directly.
+Simple. Fast. Easy.     </p>
             </ScrollReveal>
           </div>
         </div>
