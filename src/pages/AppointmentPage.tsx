@@ -494,9 +494,16 @@ Simple. Fast. Easy.     </p>
 
 
                         <input
-  type="tel"
-  name="contactNumber"
-/>
+                          type="tel"
+                          name="contactNumber"
+                          className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#197C6E]"
+                          value={formData.contactNumber}
+                          onChange={handleChange}
+                          required
+                          disabled={isSubmitting}
+                        />
+
+                        
                         
                       </div>
 
@@ -597,7 +604,7 @@ Simple. Fast. Easy.     </p>
                       </div>
                       <div>
                         <p className="text-sm text-gray-500">Contact Number</p>
-                        <p className="font-medium">{formData.mobileNumber}</p>
+                        <p className="font-medium">{formData.contactNumber}</p>
                       </div>
                       
                     </div>
