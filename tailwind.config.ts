@@ -80,6 +80,7 @@ const config: Config = {
         customBlue: "#1E2C5E",
         royal: "#1E2C5E",
         gold: "#FFD700",
+        grin: "#0b8578", 
         "soft-grey": "#F5F7FA",
         "royal-light": "#2E3E78",
         "gold-light": "#FFE44D",
