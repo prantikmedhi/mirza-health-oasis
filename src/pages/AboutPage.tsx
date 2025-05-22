@@ -128,7 +128,7 @@ const AboutPage = () => {
             {/* Mission */}
             <ScrollReveal delay={300}>
               <div className="bg-white p-8 rounded-lg shadow-md">
-                <div className="w-16 h-16 bg-gold rounded-full flex items-center justify-center mb-6 text-royal">
+                <div className="w-16 h-16 bg-royal rounded-full flex items-center justify-center mb-6 text-royal">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6l4 2m6-2a10 10 0 11-20 0 10 10 0 0120 0z" />
 </svg>
