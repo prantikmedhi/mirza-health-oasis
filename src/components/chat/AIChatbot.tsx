@@ -10,11 +10,14 @@ const AIChatbot = () => {
   ]);
   const [input, setInput] = useState('');
   const [isTyping, setIsTyping] = useState(false);
+  const [showTooltip, setShowTooltip] = useState(true);
+  const [isOnline, setIsOnline] = useState(true); // Added online status state
   const chatEndRef = useRef<HTMLDivElement>(null);
   const chatId = useRef<string>(crypto.randomUUID());
+  const tooltipTimeoutRef = useRef<NodeJS.Timeout>();
 
   const systemPrompt = `
-    You are the helpful AI assistant of Mirza Multispeciality Hospital. Your role is to guide visitors, answer questions politely, and provide useful information about the hospital’s services. Speak clearly and compassionately like a caring medical staff member. Do not use medical jargon. Your answers should sound warm, human, and empathetic.
+    You are the helpful AI assistant of Mirza Multispeciality Hospital. Your role is to guide visitors, answer questions politely, and provide useful information about the hospital's services. Speak clearly and compassionately like a caring medical staff member. Do not use medical jargon. Your answers should sound warm, human, and empathetic.
     Begin by asking the user's name so you can address them personally in the conversation.
     🏥 About: Mirza Multispeciality Hospital provides high-quality, patient-centric healthcare with personalized attention and care.
     🩺 Services:
@@ -35,6 +38,19 @@ const AIChatbot = () => {
   `;
 
   useEffect(() => {
+    // Hide tooltip after 5 seconds
+    tooltipTimeoutRef.current = setTimeout(() => {
+      setShowTooltip(false);
+    }, 5000);
+
+    return () => {
+      if (tooltipTimeoutRef.current) {
+        clearTimeout(tooltipTimeoutRef.current);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
     if (chatEndRef.current) {
       chatEndRef.current.scrollIntoView({ behavior: 'smooth' });
     }
@@ -46,6 +62,7 @@ const AIChatbot = () => {
     let botMessage = '';
 
     websocket.onopen = () => {
+      setIsOnline(true); // Set online status when connection opens
       websocket.send(JSON.stringify({
         chatId: chatId.current,
         appId: 'fire-person',
@@ -68,6 +85,7 @@ const AIChatbot = () => {
     };
 
     websocket.onerror = () => {
+      setIsOnline(false); // Set offline status on error
       setMessages(prev => [...prev, { sender: 'bot', text: 'Connection error. Please try again later.' }]);
       setIsTyping(false);
     };
@@ -85,20 +103,20 @@ const AIChatbot = () => {
   return (
     <>
       {/* Chat Button */}
-<button
-  className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-white border-2 border-teal shadow-lg flex items-center justify-center"
-  onClick={() => setIsOpen(!isOpen)}
-  aria-label="Chat with Mirza AI"
->
-  <img
-    src="/chatbot-icon.png" // replace with your actual image file name
-    alt="Chat Icon"
-    className="w-10 h-10"
-  />
-</button>
+      <button
+        className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-white border-2 border-teal shadow-lg flex items-center justify-center"
+        onClick={() => setIsOpen(!isOpen)}
+        aria-label="Chat with Mirza AI"
+      >
+        <img
+          src="/chatbot-icon.png"
+          alt="Chat Icon"
+          className="w-10 h-10"
+        />
+      </button>
 
-      {/* Tooltip */}
-      {!isOpen && (
+      {/* Tooltip - now only shows temporarily */}
+      {!isOpen && showTooltip && (
         <div className="fixed bottom-24 right-6 bg-white text-teal px-4 py-2 rounded shadow z-50">
           <p className="text-sm">Ask MMH AI Assistant</p>
         </div>
@@ -109,8 +127,17 @@ const AIChatbot = () => {
         <div className="fixed bottom-24 right-6 w-80 md:w-96 h-[480px] bg-white rounded-xl shadow-xl flex flex-col overflow-hidden z-50">
           {/* Header */}
           <div className="bg-teal text-white p-4">
-            <h3 className="font-semibold text-base text-white">Mirza Multispeciality Hospital AI Chatbot</h3>  
-            <p className="text-xs opacity-80">Ask me anything about our hospital</p>
+            <div className="flex justify-between items-center">
+              <div>
+                <h3 className="font-semibold text-base text-white">Mirza Multispeciality Hospital AI Chatbot</h3>  
+                <p className="text-xs opacity-80">Ask me anything about our hospital</p>
+              </div>
+              {/* Online status indicator */}
+              <div className="flex items-center">
+                <span className={`w-2 h-2 rounded-full mr-1 ${isOnline ? 'bg-green-400' : 'bg-red-400'}`}></span>
+                <span className="text-xs">{isOnline ? 'Online' : 'Offline'}</span>
+              </div>
+            </div>
           </div>
 
           {/* Chat messages */}
