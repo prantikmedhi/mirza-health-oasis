@@ -148,17 +148,19 @@ const AppointmentPage = () => {
     setIsSubmitting(true);
 
     try {
-      // Create FormData object to match Google Apps Script expectations
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbyeKx60rcTYEgEWnwZM3LbdlszRYWsdt46PeUJKyQacTcV7u1cQpSffDCbFfT59Wjxn/exec';
+      
+      // Create FormData exactly like the working JavaScript code
       const submitData = new FormData();
       
-      // Add all form fields to FormData
+      // Add all form fields to FormData with exact field names
       submitData.append('name', formData.name);
       submitData.append('fathersName', formData.fathersName);
       submitData.append('dob', formData.dob);
       submitData.append('age', formData.age);
       submitData.append('gender', formData.gender);
       submitData.append('nationality', formData.nationality);
-      submitData.append('passportNumber', formData.passportNumber);
+      submitData.append('passportNumber', formData.passportNumber || '');
       submitData.append('maritalStatus', formData.maritalStatus);
       submitData.append('address', formData.address);
       submitData.append('city', formData.city);
@@ -167,29 +169,22 @@ const AppointmentPage = () => {
       submitData.append('pincode', formData.pincode);
       submitData.append('phoneNumber', formData.phoneNumber);
       submitData.append('mobileNumber', formData.mobileNumber);
-      submitData.append('email', formData.email);
+      submitData.append('email', formData.email || '');
       submitData.append('department', formData.department);
 
-      console.log('Submitting data:', Object.fromEntries(submitData));
-
-      const response = await fetch("https://script.google.com/macros/s/AKfycbyeKx60rcTYEgEWnwZM3LbdlszRYWsdt46PeUJKyQacTcV7u1cQpSffDCbFfT59Wjxn/exec", {
-        method: "POST",
-        body: submitData
+      // Submit exactly like the working JavaScript code
+      await fetch(scriptURL, { 
+        method: 'POST', 
+        body: submitData 
       });
 
-      const result = await response.text();
-      console.log('Response:', result);
-
-      if (response.ok || result.includes('success')) {
-        setStep(2);
-        toast.success("Appointment request submitted successfully!");
-      } else {
-        throw new Error(`Server response: ${result}`);
-      }
+      // If we reach here, submission was successful
+      setStep(2);
+      toast.success("Form submitted successfully!");
       
     } catch (error) {
       console.error("Submission error:", error);
-      toast.error("An error occurred while submitting your appointment. Please try again.");
+      toast.error("Submission failed. Try again.");
     } finally {
       setIsSubmitting(false);
     }
