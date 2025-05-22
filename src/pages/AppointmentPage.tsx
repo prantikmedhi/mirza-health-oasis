@@ -148,19 +148,44 @@ const AppointmentPage = () => {
     setIsSubmitting(true);
 
     try {
+      // Create FormData object to match Google Apps Script expectations
+      const submitData = new FormData();
+      
+      // Add all form fields to FormData
+      submitData.append('name', formData.name);
+      submitData.append('fathersName', formData.fathersName);
+      submitData.append('dob', formData.dob);
+      submitData.append('age', formData.age);
+      submitData.append('gender', formData.gender);
+      submitData.append('nationality', formData.nationality);
+      submitData.append('passportNumber', formData.passportNumber);
+      submitData.append('maritalStatus', formData.maritalStatus);
+      submitData.append('address', formData.address);
+      submitData.append('city', formData.city);
+      submitData.append('state', formData.state);
+      submitData.append('country', formData.country);
+      submitData.append('pincode', formData.pincode);
+      submitData.append('phoneNumber', formData.phoneNumber);
+      submitData.append('mobileNumber', formData.mobileNumber);
+      submitData.append('email', formData.email);
+      submitData.append('department', formData.department);
+
+      console.log('Submitting data:', Object.fromEntries(submitData));
+
       const response = await fetch("https://script.google.com/macros/s/AKfycbyeKx60rcTYEgEWnwZM3LbdlszRYWsdt46PeUJKyQacTcV7u1cQpSffDCbFfT59Wjxn/exec", {
         method: "POST",
-        headers: { 
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-        mode: 'no-cors' // Add this if CORS issues persist
+        body: submitData
       });
 
-      // Since we're using no-cors mode, we can't check response.ok
-      // We'll assume success if no error is thrown
-      setStep(2);
-      toast.success("Appointment request submitted successfully!");
+      const result = await response.text();
+      console.log('Response:', result);
+
+      if (response.ok || result.includes('success')) {
+        setStep(2);
+        toast.success("Appointment request submitted successfully!");
+      } else {
+        throw new Error(`Server response: ${result}`);
+      }
       
     } catch (error) {
       console.error("Submission error:", error);
