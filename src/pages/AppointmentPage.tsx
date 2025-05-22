@@ -150,10 +150,10 @@ const AppointmentPage = () => {
     try {
       const scriptURL = 'https://script.google.com/macros/s/AKfycbyeKx60rcTYEgEWnwZM3LbdlszRYWsdt46PeUJKyQacTcV7u1cQpSffDCbFfT59Wjxn/exec';
       
-      // Create FormData exactly like the working JavaScript code
+      // Create FormData with all fields
       const submitData = new FormData();
       
-      // Add all form fields to FormData with exact field names
+      // Add all form fields to FormData
       submitData.append('name', formData.name);
       submitData.append('fathersName', formData.fathersName);
       submitData.append('dob', formData.dob);
@@ -172,19 +172,66 @@ const AppointmentPage = () => {
       submitData.append('email', formData.email || '');
       submitData.append('department', formData.department);
 
-      // Submit exactly like the working JavaScript code
-      await fetch(scriptURL, { 
+      console.log('Submitting form data:', Object.fromEntries(submitData));
+
+      // Submit with proper error handling
+      const response = await fetch(scriptURL, { 
         method: 'POST', 
-        body: submitData 
+        body: submitData,
+        mode: 'no-cors' // Important for Google Apps Script
       });
 
-      // If we reach here, submission was successful
+      console.log('Response received:', response);
+
+      // Note: With no-cors mode, we can't read the response
+      // So we assume success if no error is thrown
       setStep(2);
       toast.success("Form submitted successfully!");
       
     } catch (error) {
       console.error("Submission error:", error);
-      toast.error("Submission failed. Try again.");
+      toast.error("Submission failed. Please try again.");
+      
+      // Try alternative submission method
+      try {
+        // Alternative: Use URLSearchParams for form submission
+        const params = new URLSearchParams();
+        params.append('name', formData.name);
+        params.append('fathersName', formData.fathersName);
+        params.append('dob', formData.dob);
+        params.append('age', formData.age);
+        params.append('gender', formData.gender);
+        params.append('nationality', formData.nationality);
+        params.append('passportNumber', formData.passportNumber || '');
+        params.append('maritalStatus', formData.maritalStatus);
+        params.append('address', formData.address);
+        params.append('city', formData.city);
+        params.append('state', formData.state);
+        params.append('country', formData.country);
+        params.append('pincode', formData.pincode);
+        params.append('phoneNumber', formData.phoneNumber);
+        params.append('mobileNumber', formData.mobileNumber);
+        params.append('email', formData.email || '');
+        params.append('department', formData.department);
+
+        console.log('Trying alternative submission method...');
+        
+        await fetch(scriptURL, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+          },
+          body: params,
+          mode: 'no-cors'
+        });
+
+        setStep(2);
+        toast.success("Form submitted successfully!");
+        
+      } catch (alternativeError) {
+        console.error("Alternative submission also failed:", alternativeError);
+        toast.error("Unable to submit form. Please contact support.");
+      }
     } finally {
       setIsSubmitting(false);
     }
