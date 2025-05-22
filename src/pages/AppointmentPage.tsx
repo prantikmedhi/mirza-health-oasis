@@ -118,13 +118,11 @@ const AppointmentPage = () => {
       return false;
     }
 
-    // Validate email format if provided
     if (formData.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
       toast.error("Please enter a valid email address");
       return false;
     }
 
-    // Validate phone numbers
     if (!/^\d{10,15}$/.test(formData.phoneNumber.replace(/[^\d]/g, ''))) {
       toast.error("Please enter a valid phone number");
       return false;
@@ -150,41 +148,36 @@ const AppointmentPage = () => {
     try {
       const scriptURL = 'https://script.google.com/macros/s/AKfycbyeKx60rcTYEgEWnwZM3LbdlszRYWsdt46PeUJKyQacTcV7u1cQpSffDCbFfT59Wjxn/exec';
       
-      // Create FormData with all fields
       const submitData = new FormData();
       
-      // Add all form fields to FormData
-      submitData.append('name', formData.name);
-      submitData.append('fathersName', formData.fathersName);
-      submitData.append('dob', formData.dob);
-      submitData.append('age', formData.age);
-      submitData.append('gender', formData.gender);
-      submitData.append('nationality', formData.nationality);
-      submitData.append('passportNumber', formData.passportNumber || '');
-      submitData.append('maritalStatus', formData.maritalStatus);
-      submitData.append('address', formData.address);
-      submitData.append('city', formData.city);
-      submitData.append('state', formData.state);
-      submitData.append('country', formData.country);
-      submitData.append('pincode', formData.pincode);
-      submitData.append('phoneNumber', formData.phoneNumber);
-      submitData.append('mobileNumber', formData.mobileNumber);
-      submitData.append('email', formData.email || '');
-      submitData.append('department', formData.department);
+      submitData.append('Full Name', formData.name);
+      submitData.append("Father's/Spouse's Name", formData.fathersName);
+      submitData.append('Date of Birth', formData.dob);
+      submitData.append('Age', formData.age);
+      submitData.append('Gender', formData.gender);
+      submitData.append('Nationality', formData.nationality);
+      submitData.append('Passport Number', formData.passportNumber || '');
+      submitData.append('Marital Status', formData.maritalStatus);
+      submitData.append('Address', formData.address);
+      submitData.append('City', formData.city);
+      submitData.append('State', formData.state);
+      submitData.append('Country', formData.country);
+      submitData.append('Pincode', formData.pincode);
+      submitData.append('Phone Number', formData.phoneNumber);
+      submitData.append('Mobile Number', formData.mobileNumber);
+      submitData.append('Email', formData.email || '');
+      submitData.append('Department', formData.department);
 
       console.log('Submitting form data:', Object.fromEntries(submitData));
 
-      // Submit with proper error handling
       const response = await fetch(scriptURL, { 
         method: 'POST', 
         body: submitData,
-        mode: 'no-cors' // Important for Google Apps Script
+        mode: 'no-cors'
       });
 
       console.log('Response received:', response);
 
-      // Note: With no-cors mode, we can't read the response
-      // So we assume success if no error is thrown
       setStep(2);
       toast.success("Form submitted successfully!");
       
@@ -192,117 +185,49 @@ const AppointmentPage = () => {
       console.error("Submission error:", error);
       toast.error("Submission failed. Please try again.");
       
-      // Try alternative submission method
       try {
-        // Alternative: Use URLSearchParams for form submission
         const params = new URLSearchParams();
-        params.append('name', formData.name);
-        params.append('fathersName', formData.fathersName);
-        params.append('dob', formData.dob);
-        params.append('age', formData.age);
-        params.append('gender', formData.gender);
-        params.append('nationality', formData.nationality);
-        params.append('passportNumber', formData.passportNumber || '');
-        params.append('maritalStatus', formData.maritalStatus);
-const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-  e.preventDefault();
+        
+        params.append('Full Name', formData.name);
+        params.append("Father's/Spouse's Name", formData.fathersName);
+        params.append('Date of Birth', formData.dob);
+        params.append('Age', formData.age);
+        params.append('Gender', formData.gender);
+        params.append('Nationality', formData.nationality);
+        params.append('Passport Number', formData.passportNumber || '');
+        params.append('Marital Status', formData.maritalStatus);
+        params.append('Address', formData.address);
+        params.append('City', formData.city);
+        params.append('State', formData.state);
+        params.append('Country', formData.country);
+        params.append('Pincode', formData.pincode);
+        params.append('Phone Number', formData.phoneNumber);
+        params.append('Mobile Number', formData.mobileNumber);
+        params.append('Email', formData.email || '');
+        params.append('Department', formData.department);
 
-  if (!validateForm()) {
-    return;
-  }
+        console.log('Trying alternative submission method...');
+        
+        await fetch(scriptURL, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+          },
+          body: params,
+          mode: 'no-cors'
+        });
 
-  setIsSubmitting(true);
-
-  try {
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbyeKx60rcTYEgEWnwZM3LbdlszRYWsdt46PeUJKyQacTcV7u1cQpSffDCbFfT59Wjxn/exec';
-    
-    // Create FormData with EXACT column names from Google Sheets
-    const submitData = new FormData();
-    
-    // Match the exact headers from your Google Sheets (remove extra spaces)
-    submitData.append('Full Name', formData.name);
-    submitData.append("Father's/Spouse's Name", formData.fathersName);
-    submitData.append('Date of Birth', formData.dob);
-    submitData.append('Age', formData.age);
-    submitData.append('Gender', formData.gender);
-    submitData.append('Nationality', formData.nationality);
-    submitData.append('Passport Number', formData.passportNumber || '');
-    submitData.append('Marital Status', formData.maritalStatus);
-    submitData.append('Address', formData.address);
-    submitData.append('City', formData.city);
-    submitData.append('State', formData.state);
-    submitData.append('Country', formData.country);
-    submitData.append('Pincode', formData.pincode);
-    submitData.append('Phone Number', formData.phoneNumber); // Note the space
-    submitData.append('Mobile Number', formData.mobileNumber); // Note the space
-    submitData.append('Email', formData.email || '');
-    submitData.append('Department', formData.department);
-
-    console.log('Submitting form data:', Object.fromEntries(submitData));
-
-    // Submit with proper error handling
-    const response = await fetch(scriptURL, { 
-      method: 'POST', 
-      body: submitData,
-      mode: 'no-cors' // Important for Google Apps Script
-    });
-
-    console.log('Response received:', response);
-
-    // Note: With no-cors mode, we can't read the response
-    // So we assume success if no error is thrown
-    setStep(2);
-    toast.success("Form submitted successfully!");
-    
-  } catch (error) {
-    console.error("Submission error:", error);
-    toast.error("Submission failed. Please try again.");
-    
-    // Try alternative submission method with URLSearchParams
-    try {
-      const params = new URLSearchParams();
-      
-      // Use exact column names here too
-      params.append('Full Name', formData.name);
-      params.append("Father's/Spouse's Name", formData.fathersName);
-      params.append('Date of Birth', formData.dob);
-      params.append('Age', formData.age);
-      params.append('Gender', formData.gender);
-      params.append('Nationality', formData.nationality);
-      params.append('Passport Number', formData.passportNumber || '');
-      params.append('Marital Status', formData.maritalStatus);
-      params.append('Address', formData.address);
-      params.append('City', formData.city);
-      params.append('State', formData.state);
-      params.append('Country', formData.country);
-      params.append('Pincode', formData.pincode);
-      params.append('Phone Number', formData.phoneNumber);
-      params.append('Mobile Number', formData.mobileNumber);
-      params.append('Email', formData.email || '');
-      params.append('Department', formData.department);
-
-      console.log('Trying alternative submission method...');
-      
-      await fetch(scriptURL, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: params,
-        mode: 'no-cors'
-      });
-
-      setStep(2);
-      toast.success("Form submitted successfully!");
-      
-    } catch (alternativeError) {
-      console.error("Alternative submission also failed:", alternativeError);
-      toast.error("Unable to submit form. Please contact support.");
+        setStep(2);
+        toast.success("Form submitted successfully!");
+        
+      } catch (alternativeError) {
+        console.error("Alternative submission also failed:", alternativeError);
+        toast.error("Unable to submit form. Please contact support.");
+      }
+    } finally {
+      setIsSubmitting(false);
     }
-  } finally {
-    setIsSubmitting(false);
-  }
-};
+  };
 
   const resetForm = () => {
     setFormData({
