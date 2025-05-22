@@ -491,15 +491,13 @@ Simple. Fast. Easy.     </p>
                         <label className="block text-gray-700 text-sm font-medium mb-2">
                           Contact Number*
                         </label>
+
+
                         <input
-                          type="tel"
-                          name="conatctNumber"
-                          className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#197C6E]"
-                          value={formData.contactNumber}
-                          onChange={handleChange}
-                          required
-                          disabled={isSubmitting}
-                        />
+  type="tel"
+  name="contactNumber"
+/>
+                        
                       </div>
 
                       
