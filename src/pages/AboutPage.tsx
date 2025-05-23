@@ -68,7 +68,7 @@ const AboutPage = () => {
             </ScrollReveal>
             <ScrollReveal delay={400}>
               <p className="text-gray-600 mb-6">
-                Located in Tech City, Mirza, near IITG, Bongora, Guwahati, Assam-781015...
+                Located in Tech City, Mirza, near IIITG, Bongora, Guwahati, Assam-781015...
               </p>
             </ScrollReveal>
           </div>
@@ -148,14 +148,10 @@ const AboutPage = () => {
         <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
           <div>
             <SectionTitle 
-              title="Our Location" 
-              subtitle="Find us in the heart of Guwahati" 
-            />
-            <ScrollReveal delay={200}>
-              <p className="text-gray-600 mb-6">
-                Mirza Multispeciality Hospital is strategically located...
-              </p>
-            </ScrollReveal>
+              title="Find Us" 
+                />
+            
+        
             <ScrollReveal delay={400}>
               <div className="mb-6">
                 <h4 className="font-bold text-royal mb-2">Address:</h4>
