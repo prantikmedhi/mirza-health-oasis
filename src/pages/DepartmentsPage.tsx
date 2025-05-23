@@ -40,35 +40,19 @@ const DepartmentsPage = () => {
           { 
             id: 1, 
             name: "Dr. Arindam Roy Choudhury",
-            specialty: "Internal Medicine",
-            education: "MBBS, MD (Medicine)",
-            experience: "15+ years",
-            bio: "Dr. Arindam is a seasoned internist with extensive experience in treating complex medical conditions."
-          },
+               },
           { 
             id: 2, 
             name: "Dr. Bikash Das",
-            specialty: "General Medicine",
-            education: "MBBS, DNB",
-            experience: "12+ years",
-            bio: "Dr. Bikash specializes in preventive care and management of chronic diseases."
-          },
+              },
           { 
             id: 3, 
             name: "Dr. Jogesh Kalita",
-            specialty: "Pulmonology",
-            education: "MBBS, MD (Pulmonary Medicine)",
-            experience: "10+ years",
-            bio: "Dr. Jogesh is an expert in respiratory disorders and sleep medicine."
-          },
+              },
           { 
             id: 4, 
             name: "Dr. Annu Gupta",
-            specialty: "Medical Oncology",
-            education: "MBBS, MD, DM (Medical Oncology)",
-            experience: "8+ years",
-            bio: "Dr. Annu specializes in medical management of various cancer treatments."
-          }
+              }
         ],
 
 
@@ -84,51 +68,27 @@ const DepartmentsPage = () => {
           { 
             id: 1, 
             name: "Dr. Gautam Das",
-            specialty: "General Surgery",
-            education: "MBBS, MS (General Surgery)",
-            experience: "18+ years",
-            bio: "Dr. Gautam is an experienced general surgeon specializing in minimally invasive procedures."
-          },
+                 },
           { 
             id: 2, 
             name: "Dr. Kailash Thakuria",
-            specialty: "Surgical Oncology",
-            education: "MBBS, MS, MCh (Surgical Oncology)",
-            experience: "16+ years",
-            bio: "Dr. Kailash is a surgical oncologist with expertise in complex cancer surgeries."
-          },
+              },
           { 
             id: 3, 
             name: "Dr. Rubul Das",
-            specialty: "Laparoscopic Surgery",
-            education: "MBBS, MS, FMAS",
-            experience: "12+ years",
-            bio: "Dr. Rubul specializes in advanced laparoscopic and robotic surgical techniques."
-          },
+              },
           { 
             id: 4, 
             name: "Dr. John Kr. Kalita",
-            specialty: "Gastrointestinal Surgery",
-            education: "MBBS, MS, DNB",
-            experience: "13+ years",
-            bio: "Dr. John focuses on gastrointestinal surgeries and has pioneered several new techniques in the field."
-          },
+               },
           { 
             id: 5, 
             name: "Dr. Najim Haque",
-            specialty: "Vascular Surgery",
-            education: "MBBS, MS (Surgery), DNB (Vascular Surgery)",
-            experience: "9+ years",
-            bio: "Dr. Najim is specialized in vascular and endovascular surgeries."
-          },
+              },
           { 
             id: 6, 
             name: "Dr. Ridip Mazumder",
-            specialty: "Plastic Surgery",
-            education: "MBBS, MS, MCh (Plastic Surgery)",
-            experience: "11+ years",
-            bio: "Dr. Ridip is a skilled plastic surgeon specializing in reconstructive procedures."
-          }
+            }
         ],
         
       },
