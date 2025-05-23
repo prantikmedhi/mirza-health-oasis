@@ -34,9 +34,9 @@ const AboutPage = () => {
       <section className="bg-royal py-16 md:py-24">
         <div className="container mx-auto px-4 text-center text-white">
           <ScrollReveal>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-playfair font-bold mb-4">
-              About Our Hospital
-            </h1>
+            <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-playfair font-bold mb-4">
+  About Our Hospital
+</h1>
           </ScrollReveal>
           <ScrollReveal delay={200}>
             <p className="text-xl max-w-3xl mx-auto font-medium">
