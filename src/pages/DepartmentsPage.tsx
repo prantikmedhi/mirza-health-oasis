@@ -221,9 +221,9 @@ const DepartmentsPage = () => {
         <div className="container mx-auto px-4">
           <div className="text-center text-white">
             <ScrollReveal>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-playfair font-bold mb-4">
-                Our Departments
-              </h1>
+              <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-playfair font-bold mb-4">
+  Our Departments
+</h1>
             </ScrollReveal>
             <ScrollReveal delay={200}>
               <p className="text-xl max-w-3xl mx-auto text-white font-medium">
