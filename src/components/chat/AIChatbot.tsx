@@ -25,7 +25,7 @@ Name: Mirza Multispeciality Hospital
 Address: Bongora, Tech City, Near IIITG, Guwahati – 781015
 Google Maps Link: https://maps.app.goo.gl/TzwpUdPryKdfPRnt9
 Contact Number (General & Emergency): +91 8011260929
-Website: www.miramultispecialityhosptial.in
+Website: www.mirzamultispecialityhosptial.in
 Established On: 6th May 2025
 Founders/Promoters:
 • Dr. Chakradhar Das
@@ -118,7 +118,8 @@ FAQs to Train Your Chatbot
 
 9. Q: Is there IPD/Admission facility?
    A: Yes, but detailed information is not available at the moment.
-`;
+
+Website Builder: Growvaa.in`;
 
   // Function to format message text with clickable links
   const formatMessage = (text: string) => {
