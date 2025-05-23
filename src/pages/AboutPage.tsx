@@ -207,17 +207,17 @@ const AboutPage = () => {
         <ScrollReveal delay={400}>
           <div className="flex flex-wrap justify-center gap-4">
             <Link 
-              to="/appointment" 
-              className="bg-grin text-white hover:bg-royal transition-colors duration-300 py-3 px-8 rounded-md font-medium text-lg"
-            >
-              Book Appointment
-            </Link>
-            <Link 
-              to="/contact" 
-              className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-royal transition-colors duration-300 py-3 px-8 rounded-md font-medium text-lg"
-            >
-              Contact Us
-            </Link>
+  to="/appointment" 
+  className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-royal transition-colors duration-300 py-3 px-8 rounded-md font-medium text-lg"
+>
+  Book Appointment
+</Link>
+<Link 
+  to="/contact" 
+  className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-royal transition-colors duration-300 py-3 px-8 rounded-md font-medium text-lg"
+>
+  Contact Us
+</Link>
           </div>
         </ScrollReveal>
       </section>
