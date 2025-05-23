@@ -170,9 +170,13 @@ const HomePage = () => {
           </ScrollReveal>
           <ScrollReveal delay={400}>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link to="/appointment" className="bg-skyblue text-white hover:bg-skyblue-medium transition-colors duration-300 py-3 px-8 rounded-md font-medium text-lg">
+              <Link 
+                to="/appointment" 
+                className="bg-white text-teal hover:bg-gray-100 transition-colors duration-300 py-3 px-8 rounded-md font-medium text-lg luxury-shadow"
+              >
                 Book Appointment
               </Link>
+              
               <a href="tel:+918011673568" className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-teal transition-colors duration-300 py-3 px-8 rounded-md font-medium text-lg">
                 Call Emergency: +91 8011673568
               </a>
