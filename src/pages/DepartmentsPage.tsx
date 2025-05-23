@@ -318,67 +318,8 @@ const DepartmentsPage = () => {
         </div>
       </section>
 
-      {/* Doctor Details Dialog */}
-      <Dialog open={selectedDoctor !== null} onOpenChange={closeDialog}>
-        <DialogContent className="sm:max-w-md">
-          <DialogHeader>
-            <DialogTitle className="flex items-center justify-between">
-              <span className="text-royal">{selectedDoctor?.name}</span>
-              <button 
-                onClick={closeDialog} 
-                className="ml-auto inline-flex h-8 w-8 items-center justify-center rounded-md hover:bg-gray-100"
-              >
-                <X className="h-4 w-4" />
-              </button>
-            </DialogTitle>
-            <DialogDescription>
-              {selectedDoctor?.specialty}
-            </DialogDescription>
-          </DialogHeader>
-          
-          <div className="grid gap-4 py-4">
-            <div className="h-48 overflow-hidden bg-royal/5 flex items-center justify-center rounded-md">
-              <div className="text-royal/70">
-                <UserRound size={64} strokeWidth={1.5} />
-              </div>
-            </div>
-            
-            <div className="space-y-4">
-              {selectedDoctor?.bio && (
-                <div>
-                  <h4 className="text-sm font-medium text-gray-500">About</h4>
-                  <p className="text-sm">{selectedDoctor.bio}</p>
-                </div>
-              )}
-              
-              <div className="grid grid-cols-2 gap-4">
-                {selectedDoctor?.education && (
-                  <div>
-                    <h4 className="text-sm font-medium text-gray-500">Education</h4>
-                    <p className="text-sm">{selectedDoctor.education}</p>
-                  </div>
-                )}
-                
-                {selectedDoctor?.experience && (
-                  <div>
-                    <h4 className="text-sm font-medium text-gray-500">Experience</h4>
-                    <p className="text-sm">{selectedDoctor.experience}</p>
-                  </div>
-                )}
-              </div>
-              
-              <div className="pt-2">
-                <button 
-                  onClick={() => window.location.href = "/appointment"}
-                  className="bg-royal text-white px-4 py-2 rounded hover:bg-royal/90 transition-colors w-full"
-                >
-                  Book Appointment
-                </button>
-              </div>
-            </div>
-          </div>
-        </DialogContent>
-      </Dialog>
+      
+
 
       {/* Statistics */}
       <section className="py-16 bg-soft-grey">
