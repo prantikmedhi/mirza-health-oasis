@@ -324,15 +324,15 @@ const DepartmentsPage = () => {
       {/* Statistics */}
       <section className="py-16 bg-soft-grey">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-            <StatCard number="13+" text="Departments" />
-            <StatCard number="50+" text="Doctors" />
-            <StatCard number="100+" text="Staff Members" />
-            <StatCard number="10000+" text="Patients Served" />
-          </div>
-        </div>
-      </section>
-
+      <section className="py-16 bg-soft-grey">
+  <div className="container mx-auto px-4">
+    <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
+      <StatCard number="10+" text="Departments" />
+      <StatCard number="50+" text="Doctors" />
+      <StatCard number="100+" text="Staff Members" />
+    </div>
+  </div>
+</section>
       {/* CTA */}
       <section className="py-16 bg-royal text-white">
         <div className="container mx-auto px-4 text-center">
