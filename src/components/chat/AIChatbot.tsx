@@ -11,7 +11,7 @@ const AIChatbot = () => {
   const [input, setInput] = useState('');
   const [isTyping, setIsTyping] = useState(false);
   const [showTooltip, setShowTooltip] = useState(true);
-  const [isOnline, setIsOnline] = useState(true); // Added online status state
+  const [isOnline, setIsOnline] = useState(true);
   const chatEndRef = useRef<HTMLDivElement>(null);
   const chatId = useRef<string>(crypto.randomUUID());
   const tooltipTimeoutRef = useRef<NodeJS.Timeout>();
@@ -93,10 +93,10 @@ Doctors List and Weekly Availability:
 
 FAQs to Train Your Chatbot
 1. Q: Is Dr. [Name] available today?
-   A: [Match the current day of the week with the doctor’s schedule and respond accordingly.]
+   A: [Match the current day of the week with the doctor's schedule and respond accordingly.]
 
 2. Q: How do I book an appointment?
-   A: Appointments can be booked physically or online. A ₹100 registration fee is required. Online booking is available via www.miramultispecialityhosptial.in. Once the form is submitted, you’ll receive a confirmation call.
+   A: Appointments can be booked physically or online. A ₹100 registration fee is required. Online booking is available via www.miramultispecialityhosptial.in. Once the form is submitted, you'll receive a confirmation call.
 
 3. Q: What are your OPD hours?
    A: OPD is open every day from 9:00 AM to 3:00 PM.
@@ -118,9 +118,32 @@ FAQs to Train Your Chatbot
 
 9. Q: Is there IPD/Admission facility?
    A: Yes, but detailed information is not available at the moment.
-
-Feel free to ask me anything about doctors, departments, timings, or services!
 `;
+
+  // Function to format message text with clickable links
+  const formatMessage = (text: string) => {
+    const urlRegex = /(https?:\/\/[^\s]+)|(www\.[^\s]+)/g;
+    return text.split(urlRegex).map((part, i) => {
+      if (part?.match(urlRegex)) {
+        let url = part;
+        if (!url.startsWith('http')) {
+          url = `https://${url}`;
+        }
+        return (
+          <a
+            key={i}
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-600 underline break-all"
+          >
+            {part}
+          </a>
+        );
+      }
+      return part;
+    });
+  };
 
   useEffect(() => {
     // Hide tooltip after 5 seconds
@@ -147,7 +170,7 @@ Feel free to ask me anything about doctors, departments, timings, or services!
     let botMessage = '';
 
     websocket.onopen = () => {
-      setIsOnline(true); // Set online status when connection opens
+      setIsOnline(true);
       websocket.send(JSON.stringify({
         chatId: chatId.current,
         appId: 'fire-person',
@@ -170,7 +193,7 @@ Feel free to ask me anything about doctors, departments, timings, or services!
     };
 
     websocket.onerror = () => {
-      setIsOnline(false); // Set offline status on error
+      setIsOnline(false);
       setMessages(prev => [...prev, { sender: 'bot', text: 'Connection error. Please try again later.' }]);
       setIsTyping(false);
     };
@@ -233,19 +256,19 @@ Feel free to ask me anything about doctors, departments, timings, or services!
                 className={`flex ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}
               >
                 <div
-                  className={`max-w-[80%] p-3 rounded-lg text-sm whitespace-pre-line ${
+                  className={`max-w-[80%] px-4 py-3 rounded-lg text-sm whitespace-pre-line ${
                     msg.sender === 'user'
                       ? 'bg-teal text-white rounded-tr-none'
                       : 'bg-gray-200 text-black rounded-tl-none'
-                  }`}
+                  } break-words overflow-wrap-anywhere`}
                 >
-                  {msg.text}
+                  {formatMessage(msg.text)}
                 </div>
               </div>
             ))}
             {isTyping && (
               <div className="flex justify-start">
-                <div className="bg-gray-200 text-black p-3 rounded-lg rounded-tl-none">
+                <div className="bg-gray-200 text-black p-3 rounded-lg rounded-tl-none max-w-[80%] px-4 py-3">
                   Typing...
                 </div>
               </div>
